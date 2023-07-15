@@ -17,11 +17,11 @@ public class WeaponLight : MonoBehaviour
         
         for(int i = 0; i < transform.childCount; ++i)
         {
-            var m_Child = transform.GetChild(i).GetComponent<WeaponLight>();
+            var Child = transform.GetChild(i).GetComponent<WeaponLight>();
 
-            if (m_Child)
+            if (Child)
             {
-                m_Lights.Add(m_Child);
+                m_Lights.Add(Child);
             }
         }
     }
@@ -36,9 +36,9 @@ public class WeaponLight : MonoBehaviour
     {
         yield return m_Wait;
 
-        foreach(var m_Child in m_Lights)
+        foreach(var Child in m_Lights)
         {
-            m_Child.TurnOnLight();
+            Child.TurnOnLight();
         }
     }
 }
