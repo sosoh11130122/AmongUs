@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HostScene.unity
     guid: 403bf2a2cab605e42bc9e879af84557a
+  - enabled: 1
+    path: Assets/Scenes/PublicScene.unity
+    guid: 727004631ad61354fa8db033b1f87739
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
