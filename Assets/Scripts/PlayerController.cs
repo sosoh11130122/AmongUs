@@ -28,14 +28,6 @@ public class PlayerController : MonoBehaviour
     {
         if(m_IsDead) 
             return;
-    }
-
-    private void FixedUpdate() // 규칙적인 호출로 물리 계산 등에 좋음.
-    {
-        if (m_IsDead)
-            return;
-
-        Move();
 
         if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
             m_Animator.SetBool("Move", false); // 애니메이터 파라미터와 연결.
@@ -48,9 +40,17 @@ public class PlayerController : MonoBehaviour
             if (Input.GetAxisRaw("Horizontal") == -1)
                 m_Sprite.flipX = true;
 
-            else 
+            else
                 m_Sprite.flipX = false;
         }
+    }
+
+    private void FixedUpdate() // 규칙적인 호출로 물리 계산 등에 좋음.
+    {
+        if (m_IsDead)
+            return;
+
+        Move();
     }
 
     void Move()
