@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: b1b879bbe8f94774d867c5afa0f371c3
+guid: 8db27487ed96d384095c7ae35708549b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6429080029417019159
-    second: Walk0002_0
-  - first:
-      213: 3455536316416608613
-    second: Walk0002_1
+      213: 4874682300423098185
+    second: MainMenu-sharedassets0.assets-189_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,43 +98,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk0002_0
+      name: HostScene
       rect:
         serializedVersion: 2
-        x: 1
-        y: 44
-        width: 169
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71795f9593ea83950800000000000000
-      internalID: 6429080029417019159
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk0002_1
-      rect:
-        serializedVersion: 2
-        x: 7
+        x: 0
         y: 0
-        width: 139
-        height: 36
+        width: 652
+        height: 225
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5694978b8f784ff20800000000000000
-      internalID: 3455536316416608613
+      spriteID: 94f4a9d99b956a340800000000000000
+      internalID: 4874682300423098185
       vertices: []
       indices: 
       edges: []
@@ -145,7 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: d6bce847586111d47b489e9c90d4aa05
     internalID: 0
     vertices: []
     indices: 
@@ -153,8 +129,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Walk0002_0: 6429080029417019159
-      Walk0002_1: 3455536316416608613
+      HostScene: 4874682300423098185
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

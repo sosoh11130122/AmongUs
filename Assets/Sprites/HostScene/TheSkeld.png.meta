@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: be4ffe1725fb1ff48885e1c6698f3995
+guid: 8a93f54d7d38c844183dfee7bda33ea8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4148102596170832714
-    second: Walk0011_0
+      213: 8240651494888448187
+    second: TheSkeld_0
+  - first:
+      213: -4871199460456772528
+    second: TheSkeld_1
+  - first:
+      213: 2482844124016662449
+    second: TheSkeld_2
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk0011_0
+      name: TheSkeld_0
       rect:
         serializedVersion: 2
         x: 1
         y: 0
-        width: 155
-        height: 180
+        width: 47
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +118,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4b53a86555019930800000000000000
-      internalID: 4148102596170832714
+      spriteID: bb02e9eafdcac5270800000000000000
+      internalID: 8240651494888448187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheSkeld_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1
+        width: 65
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c466146e5066cb0800000000000000
+      internalID: -4871199460456772528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheSkeld_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 99
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b7ddac7395d47220800000000000000
+      internalID: 2482844124016662449
       vertices: []
       indices: 
       edges: []
@@ -129,7 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Walk0011_0: 4148102596170832714
+      TheSkeld_0: 8240651494888448187
+      TheSkeld_1: -4871199460456772528
+      TheSkeld_2: 2482844124016662449
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
