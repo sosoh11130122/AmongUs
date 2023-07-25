@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a4ccf43b51449d247b1ee3f792287a43
+guid: 0dde4bfb129d58b4dbf8b49ea1bb471e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -201704679752226983
-    second: SelectCrew_0
+      213: 5672923113413820247
+    second: among-us-imposter_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SelectCrew_0
+      name: among-us-imposter_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 53
-        width: 153
-        height: 206
+        x: 0
+        y: 0
+        width: 204
+        height: 167
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 957a5d599a6633df0800000000000000
-      internalID: -201704679752226983
+      spriteID: 75f3225e3854abe40800000000000000
+      internalID: 5672923113413820247
       vertices: []
       indices: 
       edges: []
@@ -128,8 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      SelectCrew_0: -201704679752226983
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

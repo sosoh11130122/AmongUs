@@ -10,9 +10,6 @@ public class PlayerController : MonoBehaviour
 
     Vector2 m_PlayerMove = new Vector2();
 
-    float m_HoritontalInput = Input.GetAxisRaw("Horizontal");
-    float m_VerticalInput = Input.GetAxisRaw("Vertical");
-
     Rigidbody2D    m_Rigidbody;
     Animator       m_Animator;
     SpriteRenderer m_Sprite;
@@ -22,6 +19,9 @@ public class PlayerController : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
         m_Sprite = GetComponent<SpriteRenderer>();
+
+        float m_HoritontalInput = Input.GetAxisRaw("Horizontal");
+        float m_VerticalInput = Input.GetAxisRaw("Vertical");
     }
 
     void Update() 
