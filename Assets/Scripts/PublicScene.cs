@@ -6,5 +6,10 @@ using UnityEngine.UI;
 
 public class PublicScene : MonoBehaviour
 {
+    GameObject ParticleOBJ;
 
+    private void Start()
+    {
+        ParticleOBJ.GetComponent<Renderer>().sortingOrder = -500;
+    }
 }
