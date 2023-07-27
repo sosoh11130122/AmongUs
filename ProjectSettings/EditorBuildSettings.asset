@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PublicScene.unity
     guid: 727004631ad61354fa8db033b1f87739
   - enabled: 1
-    path: Assets/Scenes/ShhhhScene.unity
+    path: Assets/Scenes/LoadingScene.unity
     guid: 07af43799ae0b714bacdd82fc51b327c
   - enabled: 1
     path: Assets/Scenes/CrewScene.unity
@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage.unity
     guid: 2824ea4de01c19d49be2dbb1e585fc0e
   - enabled: 1
-    path: Assets/Scenes/RobbyScene.unity
+    path: Assets/Scenes/LobbyScene.unity
     guid: 5ac627505d20dc14ab6782755e3c8d23
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
