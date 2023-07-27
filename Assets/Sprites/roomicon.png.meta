@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      roomicon_0: -9157933381702157901
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
