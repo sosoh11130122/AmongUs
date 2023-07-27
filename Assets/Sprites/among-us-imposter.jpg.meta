@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      among-us-imposter_0: 5672923113413820247
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
