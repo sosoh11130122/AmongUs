@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PublicScene.unity
     guid: 727004631ad61354fa8db033b1f87739
   - enabled: 1
-    path: Assets/Scenes/ShhhhScene.unity
+    path: Assets/Scenes/LoadingScene.unity
     guid: 07af43799ae0b714bacdd82fc51b327c
   - enabled: 1
     path: Assets/Scenes/CrewScene.unity
