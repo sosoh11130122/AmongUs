@@ -82,7 +82,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         // LobbyScene->Game
         connectionInfoText.text = "방 참가 성공";
 
-        PhotonNetwork.LoadLevel("RobbyScene");
+        PhotonNetwork.LoadLevel("LobbyScene");
 
     }
 }
