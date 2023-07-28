@@ -15,10 +15,18 @@ public class ChangeColor : MonoBehaviour
     {
         if(m_ChangeOn)
             GetComponent<SpriteRenderer>().color = Color.red;
+
+        else
+            GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     public void SetColor()
     {
         m_ChangeOn = true;
+    }
+
+    public void SetColorOff()
+    {
+        m_ChangeOn = false;
     }
 }
