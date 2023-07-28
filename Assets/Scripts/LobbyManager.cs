@@ -33,7 +33,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         //connectionInfoText.text = "온라인 : 마스터 서버와 연결됨";
         PhotonNetwork.JoinOrCreateRoom(
-            "RobbyScene",
+            "LobbyScene",
             new RoomOptions() { MaxPlayers = 6 }, null);
     }
 
@@ -79,17 +79,18 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     // 룸에 참가 완료된 경우 자동 실행
     public override void OnJoinedRoom()
     {
-
-        //SceneManager.LoadScene("RobbyScene");
         // LobbyScene->Game
         connectionInfoText.text = "방 참가 성공";
 
-        PhotonNetwork.LoadLevel("LobbyScene");
+        //PhotonNetwork.LoadLevel("LobbyScene");
+
+        PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity, 0); // B
+
+        //PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity, 0); // B
 
         //StartCoroutine(CreatePlayer());
-        PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity); // B
 
-        StartCoroutine(this.CreatePlayer());
+        //StartCoroutine(this.CreatePlayer());
     }
 
     //    void CreatePlayer()
