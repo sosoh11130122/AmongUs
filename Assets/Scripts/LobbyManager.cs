@@ -3,6 +3,9 @@ using Photon.Realtime; // 포톤 서비스 관련 라이브러리
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using Unity.VisualScripting;
+using Photon.Pun.Demo.PunBasics;
 
 // 마스터(매치 메이킹) 서버와 룸 접속을 담당
 public class LobbyManager : MonoBehaviourPunCallbacks
@@ -32,7 +35,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinOrCreateRoom(
             "RobbyScene",
             new RoomOptions() { MaxPlayers = 6 }, null);
-
     }
 
     // 마스터 서버 접속 실패시 자동 실행
@@ -84,5 +86,21 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.LoadLevel("LobbyScene");
 
+        //StartCoroutine(CreatePlayer());
+        PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity); // B
+
+        StartCoroutine(this.CreatePlayer());
+    }
+
+    //    void CreatePlayer()
+    //    {
+    ////        PhotonNetwork.Instantiate("Player", new Vector3(0, 1, 0), Quaternion.identity, 0);
+    //        PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity).GetComponent<PlayerController>(); // B
+    //    }
+
+    IEnumerator CreatePlayer()
+    {
+        PhotonNetwork.Instantiate("Player", new Vector3(0, 1, 0), Quaternion.identity, 0);
+        yield return null;
     }
 }
