@@ -23,6 +23,12 @@ public class FixWiringTask : MonoBehaviour
 
     private void OnEnable()
     {
+        for (int i = 0; i < m_LeftWires.Count; ++i)
+        {
+            m_LeftWires[i].ResetTarget();
+            m_LeftWires[i].DisconnectWire();
+        }
+
         List<int> NumberPool = new List<int>();
 
         for (int i = 0; i < 4; ++i)
@@ -32,7 +38,7 @@ public class FixWiringTask : MonoBehaviour
 
         int Index = 0;
 
-        while(NumberPool.Count != 0)
+        while (NumberPool.Count != 0)
         {
             var Number = NumberPool[Random.Range(0, NumberPool.Count)];
 
@@ -87,7 +93,9 @@ public class FixWiringTask : MonoBehaviour
 
                     if (Right != null)
                     {
-                        m_SelectedWire.SetTarget(Hit.transform.position, -50f);
+                        m_SelectedWire.SetTarget(Hit.transform.position, -80f);
+                        m_SelectedWire.ConnectWire(Right);
+                        Right.ConnectWire(m_SelectedWire);
                         m_SelectedWire = null;
 
                         return;
@@ -96,12 +104,14 @@ public class FixWiringTask : MonoBehaviour
             }
 
             m_SelectedWire.ResetTarget();
+            m_SelectedWire.DisconnectWire();
             m_SelectedWire = null;
         }
 
         if (m_SelectedWire != null)
         {
-            m_SelectedWire.SetTarget(Input.mousePosition, -15f);
+            m_SelectedWire.SetTarget(Input.mousePosition, -80f);
         }
     }
+
 }

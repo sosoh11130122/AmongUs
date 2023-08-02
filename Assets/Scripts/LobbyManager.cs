@@ -22,19 +22,16 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
 
         joinButton.interactable = false;
-        connectionInfoText.text = "마스터 서버에 접속 중...";
+        connectionInfoText.text = "1.마스터 서버에 접속 중...";
     }
 
     // 마스터 서버 접속 성공시 자동 실행
     public override void OnConnectedToMaster()
     {
         // PublicScene->LobbyScene
-        //joinButton.interactable = true;
+        joinButton.interactable = true;
 
-        //connectionInfoText.text = "온라인 : 마스터 서버와 연결됨";
-        PhotonNetwork.JoinOrCreateRoom(
-            "LobbyScene",
-            new RoomOptions() { MaxPlayers = 6 }, null);
+        connectionInfoText.text = "2.온라인 : 마스터 서버와 연결됨";
     }
 
     // 마스터 서버 접속 실패시 자동 실행
@@ -55,8 +52,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsConnected)
         {
-            connectionInfoText.text = "룸에 접속...";
+            connectionInfoText.text = "3.룸에 접속...";
             PhotonNetwork.JoinRandomRoom();
+            //PhotonNetwork.LoadLevel("LobbyScene");
         }
 
         else
@@ -73,18 +71,18 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         connectionInfoText.text = "빈 장이 없음, 새로운 방 생성...";
 
-        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 4 });
+        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 6 });
     }
 
     // 룸에 참가 완료된 경우 자동 실행
     public override void OnJoinedRoom()
     {
         // LobbyScene->Game
-        connectionInfoText.text = "방 참가 성공";
+        connectionInfoText.text = "4. 방 참가 성공";
 
-        //PhotonNetwork.LoadLevel("LobbyScene");
+        PhotonNetwork.LoadLevel("LobbyScene");
 
-        PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity, 0); // B
+        //PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity, 0); // B
 
         //PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity, 0); // B
 
@@ -99,9 +97,19 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     //        PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity).GetComponent<PlayerController>(); // B
     //    }
 
-    IEnumerator CreatePlayer()
-    {
-        PhotonNetwork.Instantiate("Player", new Vector3(0, 1, 0), Quaternion.identity, 0);
-        yield return null;
-    }
+    //IEnumerator CreatePlayer()
+    //{
+    //    Debug.Log("메롱");
+
+    //    //PhotonNetwork.Instantiate("Player", new Vector3(0, 1, 0), Quaternion.identity, 0);
+    //    yield return null;
+    //}
+
+    //private void Update()
+    //{
+    //    if (PhotonNetwork.CurrentRoom.Name == "LobbyScene")
+    //    {
+    //        CreatePlayer();
+    //    }
+    //}
 }

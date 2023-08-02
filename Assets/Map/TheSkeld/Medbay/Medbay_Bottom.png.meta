@@ -1,0 +1,462 @@
+fileFormatVersion: 2
+guid: 1034d23070feb5b4cbb29fbab177647f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5303748596322315425
+    second: Medbay_Bottom_0
+  - first:
+      213: 3600375965171249914
+    second: Medbay_Bottom_1
+  - first:
+      213: -6516213835957247446
+    second: Medbay_Bottom_2
+  - first:
+      213: -2616207341128215405
+    second: Medbay_Bottom_3
+  - first:
+      213: -5258528302471200283
+    second: Medbay_Bottom_4
+  - first:
+      213: 6188144116677142885
+    second: Medbay_Bottom_5
+  - first:
+      213: -670546561424698477
+    second: Medbay_Bottom_6
+  - first:
+      213: -1525843317899450736
+    second: Medbay_Bottom_7
+  - first:
+      213: 49506793731820043
+    second: Medbay_Bottom_8
+  - first:
+      213: -5592941569147768809
+    second: Medbay_Bottom_9
+  - first:
+      213: -6770478286294695992
+    second: Medbay_Bottom_10
+  - first:
+      213: 5414466378407262023
+    second: Medbay_Bottom_11
+  - first:
+      213: 5415381168913347070
+    second: Medbay_Bottom_12
+  - first:
+      213: 5101233391278572125
+    second: Medbay_Bottom_13
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Medbay_Bottom_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 82
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aca4c57f33ba9940800000000000000
+      internalID: 5303748596322315425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 85
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af2f2ed5dda17f130800000000000000
+      internalID: 3600375965171249914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_2
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 85
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2268436a02c195a0800000000000000
+      internalID: -6516213835957247446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_3
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 0
+        width: 85
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3949845d84d51bbd0800000000000000
+      internalID: -2616207341128215405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_4
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 0
+        width: 85
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e1cdd9ae54f507b0800000000000000
+      internalID: -5258528302471200283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_5
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 0
+        width: 86
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 569e675b944b0e550800000000000000
+      internalID: 6188144116677142885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_6
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 0
+        width: 86
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 393dbe0847db1b6f0800000000000000
+      internalID: -670546561424698477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_7
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 0
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09623bd269d13dae0800000000000000
+      internalID: -1525843317899450736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_8
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 0
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0a8a56aa22efa000800000000000000
+      internalID: 49506793731820043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_9
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 0
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7107e698641e162b0800000000000000
+      internalID: -5592941569147768809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_10
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 0
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cfb8e1cedd6a02a0800000000000000
+      internalID: -6770478286294695992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_11
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 0
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 747b24deb7c042b40800000000000000
+      internalID: 5414466378407262023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_12
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 0
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef17b603b7c472b40800000000000000
+      internalID: 5415381168913347070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Medbay_Bottom_13
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 0
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52458bedb83bc640800000000000000
+      internalID: 5101233391278572125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e7a224a023e24944b99a4c7403e09792
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Medbay_Bottom_0: 5303748596322315425
+      Medbay_Bottom_1: 3600375965171249914
+      Medbay_Bottom_10: -6770478286294695992
+      Medbay_Bottom_11: 5414466378407262023
+      Medbay_Bottom_12: 5415381168913347070
+      Medbay_Bottom_13: 5101233391278572125
+      Medbay_Bottom_2: -6516213835957247446
+      Medbay_Bottom_3: -2616207341128215405
+      Medbay_Bottom_4: -5258528302471200283
+      Medbay_Bottom_5: 6188144116677142885
+      Medbay_Bottom_6: -670546561424698477
+      Medbay_Bottom_7: -1525843317899450736
+      Medbay_Bottom_8: 49506793731820043
+      Medbay_Bottom_9: -5592941569147768809
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
