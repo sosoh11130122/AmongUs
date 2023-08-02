@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 20b0e73a3db013f4597334a0c0334a16
+guid: 96d004465891c924ba9e45eafed73a04
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -851012993428640591
-    second: LeverDown_0
+      213: 5363193366160266872
+    second: LeverUp_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LeverDown_0
+      name: LeverUp_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 707
-        height: 708
+        width: 767
+        height: 765
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1bca17bf0389034f0800000000000000
-      internalID: -851012993428640591
+      spriteID: 876d6bb73f3ed6a40800000000000000
+      internalID: 5363193366160266872
       vertices: []
       indices: 
       edges: []
@@ -121,14 +121,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LeverUp_0: 5363193366160266872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
