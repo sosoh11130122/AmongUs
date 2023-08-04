@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d3f965bf986e1a443ab664bbc6ff8517
+guid: 2129c134bbcb8594392b449ee9742dab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8173127871505490946
-    second: garbage_4_0
+      213: 6586461156150141773
+    second: diamond_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -47,7 +47,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 10
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: garbage_4_0
+      name: diamond_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 74
-        height: 132
+        width: 105
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efb12130187339e80800000000000000
-      internalID: -8173127871505490946
+      spriteID: d43ec33668fc76b50800000000000000
+      internalID: 6586461156150141773
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      diamond_0: 6586461156150141773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

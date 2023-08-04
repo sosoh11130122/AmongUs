@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 86fc31043917d31459bf4c102087a375
+guid: 0857db6882e5625488993253ce91c34f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4075904309749126048
-    second: totem_0
+      213: 6617567879871120482
+    second: garbage_5_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -47,7 +47,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 10
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: totem_0
+      name: garbage_5_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 110
-        height: 100
+        width: 100
+        height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06c6be610aa7f67c0800000000000000
-      internalID: -4075904309749126048
+      spriteID: 264c0c4ece256db50800000000000000
+      internalID: 6617567879871120482
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      garbage_5_0: 6617567879871120482
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
