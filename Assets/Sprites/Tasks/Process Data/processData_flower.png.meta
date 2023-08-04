@@ -152,7 +152,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      processData_flower_0: 8965780596781854471
+      processData_flower_1: 8386007086708727819
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

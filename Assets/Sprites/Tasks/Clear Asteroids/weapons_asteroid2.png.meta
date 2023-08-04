@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      weapons_asteroid2_0: 8279019830175246493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

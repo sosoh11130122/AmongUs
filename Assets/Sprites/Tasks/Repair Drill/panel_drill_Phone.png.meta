@@ -152,7 +152,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_drill_Phone_0: -2747980432724211798
+      panel_drill_Phone_1: -8336693647323335439
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

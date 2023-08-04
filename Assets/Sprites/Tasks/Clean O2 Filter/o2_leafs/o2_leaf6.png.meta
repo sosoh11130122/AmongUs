@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      o2_leaf6_0: 5743514570883327141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

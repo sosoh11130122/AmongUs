@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vending_front_0: -215653388361432244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

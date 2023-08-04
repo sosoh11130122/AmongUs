@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_wifi_closingthing_0: -1509960430727192075
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

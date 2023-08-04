@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_temp_degreesSymbol_0: -2957743962276547420
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
