@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nav_chartCourse_ship_0: -1617367113298639192
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

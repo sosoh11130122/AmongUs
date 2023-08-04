@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_wifi_nodeOff_0: 160845474183723313
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sortingSamples_emblem_Mineral_0: -7828898860822636460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

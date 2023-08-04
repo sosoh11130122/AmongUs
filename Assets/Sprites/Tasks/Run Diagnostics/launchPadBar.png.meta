@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      launchPadBar_0: 3990766979656339331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

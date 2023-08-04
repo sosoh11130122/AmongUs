@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      launchPadCalibrate_shipLoadShade_0: -1773098590001194392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

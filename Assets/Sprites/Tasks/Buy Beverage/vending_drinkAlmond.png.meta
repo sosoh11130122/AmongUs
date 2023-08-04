@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vending_drinkAlmond_0: -2578857371586149642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

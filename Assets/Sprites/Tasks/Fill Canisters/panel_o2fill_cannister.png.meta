@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_o2fill_cannister_0: -1355823020076292324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
