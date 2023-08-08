@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      medbayScan_wires_0: 8678582528214675033
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

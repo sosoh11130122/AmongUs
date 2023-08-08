@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      weatherData_Base_0: -1922745007555206539
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

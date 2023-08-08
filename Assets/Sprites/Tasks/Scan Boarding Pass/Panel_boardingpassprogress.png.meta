@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Panel_boardingpassprogress_0: 5170134243043901054
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

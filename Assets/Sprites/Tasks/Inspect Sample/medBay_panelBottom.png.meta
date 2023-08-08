@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      medBay_panelBottom_0: -3040435072247714149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

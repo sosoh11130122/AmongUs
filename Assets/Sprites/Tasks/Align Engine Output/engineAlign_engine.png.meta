@@ -1472,7 +1472,64 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      engineAlign_engine_0: 7307433236971370382
+      engineAlign_engine_1: 5828290296241856854
+      engineAlign_engine_10: -249855281613336532
+      engineAlign_engine_11: -982271003938288733
+      engineAlign_engine_12: 8951304517064929612
+      engineAlign_engine_13: -1235023176454966871
+      engineAlign_engine_14: -3352471044120817898
+      engineAlign_engine_15: -4935254921960789256
+      engineAlign_engine_16: -8724382089915031697
+      engineAlign_engine_17: -7594760570411899351
+      engineAlign_engine_18: 8333705638128434150
+      engineAlign_engine_19: 910569205455879578
+      engineAlign_engine_2: -3324793136133892095
+      engineAlign_engine_20: 654793288086051833
+      engineAlign_engine_21: 8890201236267417182
+      engineAlign_engine_22: 2890588828775594391
+      engineAlign_engine_23: -4542632829744579800
+      engineAlign_engine_24: -5045221780703401443
+      engineAlign_engine_25: -57228303303251525
+      engineAlign_engine_26: 7267430784322185144
+      engineAlign_engine_27: 5288115190770066906
+      engineAlign_engine_28: -1583706594524807151
+      engineAlign_engine_29: 3453784215424083284
+      engineAlign_engine_3: -4154732759255375293
+      engineAlign_engine_30: -6106798173107140455
+      engineAlign_engine_31: -7588400837483486032
+      engineAlign_engine_32: 6634546452042370720
+      engineAlign_engine_33: -820401063354560366
+      engineAlign_engine_34: -7701221136947698019
+      engineAlign_engine_35: 1517803726169719419
+      engineAlign_engine_36: -4090358249651140071
+      engineAlign_engine_37: 9075563732007461645
+      engineAlign_engine_38: -5590488083641782223
+      engineAlign_engine_39: 7482927385740016297
+      engineAlign_engine_4: -7767335592135570595
+      engineAlign_engine_40: 7400148788951043047
+      engineAlign_engine_41: -3613281926489886415
+      engineAlign_engine_42: -1532112339731698394
+      engineAlign_engine_43: 9162081353949609803
+      engineAlign_engine_44: -8594908805326819001
+      engineAlign_engine_45: 4489459374076149144
+      engineAlign_engine_46: 7389606656357076942
+      engineAlign_engine_47: -4083512598645434512
+      engineAlign_engine_48: 7585693518416519409
+      engineAlign_engine_49: -4139341325784277264
+      engineAlign_engine_5: 4749144094734281535
+      engineAlign_engine_50: -9207300368208074242
+      engineAlign_engine_51: 8474522913218151897
+      engineAlign_engine_52: -2397305290793968965
+      engineAlign_engine_53: 1624438855951059773
+      engineAlign_engine_54: 6989992092345842345
+      engineAlign_engine_55: -4159124613336079711
+      engineAlign_engine_56: 6661918878346657826
+      engineAlign_engine_6: 5652280279521183471
+      engineAlign_engine_7: -5435681833069544992
+      engineAlign_engine_8: 53125213800350008
+      engineAlign_engine_9: -6767599925710968676
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

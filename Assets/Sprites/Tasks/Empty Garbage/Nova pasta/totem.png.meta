@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      totem_0: -4075904309749126048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

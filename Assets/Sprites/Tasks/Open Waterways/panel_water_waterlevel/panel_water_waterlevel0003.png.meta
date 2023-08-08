@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_water_waterlevel0003_0: -3244778660830801086
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

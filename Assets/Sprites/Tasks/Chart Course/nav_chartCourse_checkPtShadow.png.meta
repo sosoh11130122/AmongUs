@@ -296,7 +296,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nav_chartCourse_checkPtShadow_0: -4152044995946579065
+      nav_chartCourse_checkPtShadow_1: -4662855922228545044
+      nav_chartCourse_checkPtShadow_2: -5600361017261155105
+      nav_chartCourse_checkPtShadow_3: 4797789649346033194
+      nav_chartCourse_checkPtShadow_4: -6299377687784340712
+      nav_chartCourse_checkPtShadow_5: 5635499872528290283
+      nav_chartCourse_checkPtShadow_6: 4672304526188550925
+      nav_chartCourse_checkPtShadow_7: -6050955505743731879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

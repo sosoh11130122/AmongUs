@@ -800,7 +800,36 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      processData_road_0: -9095651541848298912
+      processData_road_1: -847096102686034636
+      processData_road_10: 6245322499446404931
+      processData_road_11: -3644737760988651858
+      processData_road_12: 4701542006611391100
+      processData_road_13: 271945703048855882
+      processData_road_14: 8989961643057975852
+      processData_road_15: 2087973712375918473
+      processData_road_16: -8399763434397639802
+      processData_road_17: 3119380450491964803
+      processData_road_18: -8985615896431190291
+      processData_road_19: -1104008064511779711
+      processData_road_2: -8640545603496558535
+      processData_road_20: 2078643827699495410
+      processData_road_21: -3000089145516938449
+      processData_road_22: 4551573544533598317
+      processData_road_23: 5823926573758764219
+      processData_road_24: 6291394410900294689
+      processData_road_25: 6227140141895574420
+      processData_road_26: -7115658142326719756
+      processData_road_27: 2373347481200080184
+      processData_road_28: -4884039873973845902
+      processData_road_3: 2899520026316551817
+      processData_road_4: 8658585420351350553
+      processData_road_5: 6257543072072251604
+      processData_road_6: -2821363980378542251
+      processData_road_7: 3057449013513358561
+      processData_road_8: -1459346194880575084
+      processData_road_9: 6850599834101454539
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

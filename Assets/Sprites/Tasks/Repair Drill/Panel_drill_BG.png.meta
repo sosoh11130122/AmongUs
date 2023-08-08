@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Panel_drill_BG_0: 6849135763116628145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

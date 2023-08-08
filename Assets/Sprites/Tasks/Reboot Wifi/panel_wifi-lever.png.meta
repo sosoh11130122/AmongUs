@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_wifi-lever_0: -6328884551947316833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

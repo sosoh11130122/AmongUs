@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      simonSaysButtonsShadow_0: 89430826683889658
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

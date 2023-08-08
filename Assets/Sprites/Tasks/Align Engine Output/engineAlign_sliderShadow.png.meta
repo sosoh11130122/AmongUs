@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      engineAlign_sliderShadow_0: -3881812495814979686
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

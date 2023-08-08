@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_speciment_undertalesans_0: -7201067983583838879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

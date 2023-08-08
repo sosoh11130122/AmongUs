@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_weather1_deadsquare_0: -3362965802819108612
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
