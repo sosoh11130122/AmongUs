@@ -25,8 +25,8 @@ public class ChangeColor : MonoBehaviour
         m_ChangeOn = true;
     }
 
-    public void SetColorOff()
+    public bool SetColorOff(bool ColorOff)
     {
-        m_ChangeOn = false;
+        return m_ChangeOn = false;
     }
 }

@@ -11,7 +11,6 @@ public class LeverUptoDown : MonoBehaviour
 
     Collider2D m_Collider;
 
-    bool m_DragOn = false;
 
     void Start()
     {
