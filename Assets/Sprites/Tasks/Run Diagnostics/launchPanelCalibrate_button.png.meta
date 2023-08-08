@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      launchPanelCalibrate_button_0: 7580569591432465224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rightArrow-o2_arrowFlash0004_0: -2801023862266581067
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

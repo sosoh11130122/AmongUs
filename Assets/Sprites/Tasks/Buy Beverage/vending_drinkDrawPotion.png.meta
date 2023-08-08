@@ -200,7 +200,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vending_drinkDrawPotion_0: 1548224082045585907
+      vending_drinkDrawPotion_1: -4745654091318697999
+      vending_drinkDrawPotion_2: -4873992387851675252
+      vending_drinkDrawPotion_3: 1729688008830815082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

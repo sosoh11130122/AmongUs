@@ -176,7 +176,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_treewires_0: -4975341234476768088
+      panel_treewires_1: -4662963824261377376
+      panel_treewires_2: -3600464572849456787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

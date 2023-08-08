@@ -224,7 +224,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tree_water_0: -5159542352224867808
+      tree_water_1: 4698632526046441049
+      tree_water_2: -3696588844692466242
+      tree_water_3: 8233889744340485821
+      tree_water_4: 4310706451190600025
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

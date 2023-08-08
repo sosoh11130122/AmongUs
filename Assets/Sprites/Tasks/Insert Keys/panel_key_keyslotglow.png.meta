@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_key_keyslotglow_0: 1293252095698156786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
