@@ -1,38 +1,40 @@
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityStandardAssets.Characters.ThirdPerson.PunDemos;
 
 public class ShakeMove : MonoBehaviour
 {
-    [SerializeField]
-    private float m_roughness;      //거칠기 정도
-    [SerializeField]
-    private float m_magnitude;      //움직임 범위
+    public GameObject m_GameObject;
+    Vector3 m_Pos;
 
-    private void Update()
+    [SerializeField][Range(0.01f, 0.1f)] float m_ShakeRange = 0.05f;
+    [SerializeField][Range(0.01f, 0.1f)] float m_Duration = 0.05f;
+
+    public void Shake()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(Shake(1f));
-        }
+        m_Pos = this.transform.position;
+        InvokeRepeating("StartShake", 0f, 0.005f);
+        Invoke("StopShake", m_Duration);
     }
 
-    IEnumerator Shake(float duration)
+    void StartShake()
     {
-        float halfDuration = duration / 2;
-        float elapsed = 0f;
-        float tick = Random.Range(-10f, 10f);
+        float PosX = Random.value * m_ShakeRange * 2 - m_ShakeRange;
+        float PosY = Random.value * m_ShakeRange * 2 - m_ShakeRange;
 
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime / halfDuration;
+        Vector3 m_Pos = this.transform.position;
 
-            tick += Time.deltaTime * m_roughness;
-            transform.position = new Vector3(
-                Mathf.PerlinNoise(tick, 0) - .5f,
-                Mathf.PerlinNoise(0, tick) - .5f,
-                0f) * m_magnitude * Mathf.PingPong(elapsed, halfDuration);
+        m_Pos.x += PosX;
+        m_Pos.y += PosY;
 
-            yield return null;
-        }
+        m_GameObject.transform.position = m_Pos;
+    }
+
+    void StopShake()
+    {
+        CancelInvoke("StartShake");
+        m_GameObject.transform.position = m_Pos;
     }
 }

@@ -189,6 +189,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7091c89fd1869764a83d2669415cb89d, type: 3}
+<<<<<<< HEAD
 --- !u!1 &11701580
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,6 +5026,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 8fe06fd (0803_Task_EmptyBinParticle)
 --- !u!1 &11953925
 GameObject:
   m_ObjectHideFlags: 0
@@ -14541,8 +14544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95af30ec186ced748be0ee4bed0f1d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roughness: 100
-  m_magnitude: 100
+  m_GameObject: {fileID: 0}
+  m_ShakeRange: 0.0941
+  m_Duration: 0.0973
 --- !u!1 &901400759
 GameObject:
   m_ObjectHideFlags: 0
@@ -18667,8 +18671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95af30ec186ced748be0ee4bed0f1d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_roughness: 0
-  m_magnitude: 0
+  m_GameObject: {fileID: 0}
+  m_ShakeRange: 0.05
+  m_Duration: 0.05
 --- !u!1 &1240021980
 GameObject:
   m_ObjectHideFlags: 0
@@ -23560,9 +23565,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
   - {fileID: 444047503}
   m_Father: {fileID: 277972098}
   m_RootOrder: -1
+=======
+  - {fileID: 1169240371}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+>>>>>>> parent of 8fe06fd (0803_Task_EmptyBinParticle)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> Stashed changes
 --- !u!1 &1762489318
