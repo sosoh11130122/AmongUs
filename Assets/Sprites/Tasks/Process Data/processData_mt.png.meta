@@ -800,7 +800,36 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      processData_mt_0: -6908802937205107203
+      processData_mt_1: 3877413071810356362
+      processData_mt_10: 2076037873153442280
+      processData_mt_11: 700101555033107075
+      processData_mt_12: -2855470029835857653
+      processData_mt_13: -8904274460136098708
+      processData_mt_14: 5651565033521237065
+      processData_mt_15: -4462229600633288519
+      processData_mt_16: 732189083269098284
+      processData_mt_17: 669538806113318972
+      processData_mt_18: 7613804625502286368
+      processData_mt_19: -2772865242587230939
+      processData_mt_2: -5821098547012131003
+      processData_mt_20: -1303541454103807164
+      processData_mt_21: 1813910287117003982
+      processData_mt_22: -8382193818754500700
+      processData_mt_23: 8051764419254577281
+      processData_mt_24: -8229431826386358909
+      processData_mt_25: 4406158365493230040
+      processData_mt_26: 845023851537028168
+      processData_mt_27: 5710823735801991517
+      processData_mt_28: 1954648367401549918
+      processData_mt_3: -2176892196517459796
+      processData_mt_4: -4438712331342954177
+      processData_mt_5: 4187042479165429996
+      processData_mt_6: -2193561173466997438
+      processData_mt_7: -7879189354521290062
+      processData_mt_8: -3967401330129482248
+      processData_mt_9: 496423135909987411
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

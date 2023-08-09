@@ -176,7 +176,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      garbage_lightShadow_0: -4020725656570750693
+      garbage_lightShadow_1: -2844533951664152929
+      garbage_lightShadow_2: 7782356614513042235
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

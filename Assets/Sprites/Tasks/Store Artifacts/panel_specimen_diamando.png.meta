@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      panel_specimen_diamando_0: -9152234769805498011
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

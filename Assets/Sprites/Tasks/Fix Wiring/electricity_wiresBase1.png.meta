@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      electricity_wiresBase1_0: -6101565776773100134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

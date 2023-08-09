@@ -152,7 +152,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      engineFuel_wires_0: 1813567745418351899
+      engineFuel_wires_1: -239462180841707567
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

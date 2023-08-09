@@ -248,7 +248,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      medBay_glassFrontTestTubes_0: 690834856747877400
+      medBay_glassFrontTestTubes_1: -4607302671612203686
+      medBay_glassFrontTestTubes_2: -9188032645507342667
+      medBay_glassFrontTestTubes_3: -8251225495190447867
+      medBay_glassFrontTestTubes_4: -6855376788702677785
+      medBay_glassFrontTestTubes_5: 7204649251614261324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
