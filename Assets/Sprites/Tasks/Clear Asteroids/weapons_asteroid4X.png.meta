@@ -296,7 +296,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      weapons_asteroid4X_0: 7341719893924354767
+      weapons_asteroid4X_1: 8500688009206248466
+      weapons_asteroid4X_2: 7365785933326627242
+      weapons_asteroid4X_3: 3752114858441589943
+      weapons_asteroid4X_4: 7540851284618200086
+      weapons_asteroid4X_5: -3162484562811302052
+      weapons_asteroid4X_6: 1734242542250114486
+      weapons_asteroid4X_7: -4004814743523152553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

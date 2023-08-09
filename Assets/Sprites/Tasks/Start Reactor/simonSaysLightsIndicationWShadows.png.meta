@@ -224,7 +224,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      simonSaysLightsIndicationWShadows_0: -5037121055588563449
+      simonSaysLightsIndicationWShadows_1: 4002371313437823046
+      simonSaysLightsIndicationWShadows_2: 3024556804694004680
+      simonSaysLightsIndicationWShadows_3: 2798220976972494124
+      simonSaysLightsIndicationWShadows_4: -3585830485451559762
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

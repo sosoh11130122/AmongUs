@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sortingSamples_emblem_Plant_0: -4726711434524667199
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      launchPadCalibrate_blueLine2_0: -6894792312453156478
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shields_MiraBase_0: -7192408757235175579
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

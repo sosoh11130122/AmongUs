@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sortingSamples_animal1_0: -2414591074129962479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      calibratorButton_0: -8460998399032139422
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

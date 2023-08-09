@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      electricity_Divert_switchShadow_0: 263431176372847548
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
