@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float m_MoveSpeed = 4.0f;
-    private bool m_IsDead = false;
 
     Vector2 m_PlayerMove = new Vector2();
 
@@ -26,8 +25,15 @@ public class PlayerController : MonoBehaviour
 
     void Update() 
     {
-        if(m_IsDead) 
-            return;
+        //if(m_IsDead) 
+        //    return;
+
+        if (m_Animator.GetBool("Dead"))
+        {
+            m_MoveSpeed = 0f;
+            m_PlayerMove = new Vector2(0f, 0f);
+            
+        }
 
         if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
             m_Animator.SetBool("Move", false); // 애니메이터 파라미터와 연결.
@@ -47,9 +53,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() // 규칙적인 호출로 물리 계산 등에 좋음.
     {
-        if (m_IsDead)
-            return;
-
         Move();
     }
 
@@ -63,11 +66,5 @@ public class PlayerController : MonoBehaviour
 
         m_Rigidbody.velocity = m_PlayerMove * m_MoveSpeed;
 
-    }
-
-    private void Die()
-    {
-        m_Animator.SetTrigger("Dead");
-        m_IsDead = true;
     }
 }

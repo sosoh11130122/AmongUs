@@ -7,6 +7,7 @@ TagManager:
   - Task_Wire
   - Lever
   - UICamera
+  - Impostor
   layers:
   - Default
   - TransparentFX
