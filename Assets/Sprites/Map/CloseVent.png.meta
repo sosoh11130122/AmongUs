@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 24b48a13972c2b6458f9bf8cafd3981a
+guid: 3e8a2bca159ff294aad6461dac75026a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5951966054943167406
-    second: ChatBack_0
+      213: -4827316609454601461
+    second: CloseVent_0
+  - first:
+      213: -8424612793511307720
+    second: CloseVent_1
+  - first:
+      213: -4280819415366705200
+    second: CloseVent_2
+  - first:
+      213: -419774935588355785
+    second: CloseVent_3
+  - first:
+      213: 3785739621462201638
+    second: CloseVent_4
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChatBack_0
+      name: CloseVent_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 856
-        height: 581
+        x: 4
+        y: 6
+        width: 49
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +124,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea312149791a99250800000000000000
-      internalID: 5951966054943167406
+      spriteID: b0b8d13be1de10db0800000000000000
+      internalID: -4827316609454601461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloseVent_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 15
+        width: 57
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8361c80cc43c51b80800000000000000
+      internalID: -8424612793511307720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloseVent_2
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 15
+        width: 57
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dfd8772c697794c0800000000000000
+      internalID: -4280819415366705200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloseVent_3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 13
+        width: 52
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 731c4ae8be8ac2af0800000000000000
+      internalID: -419774935588355785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloseVent_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 11
+        width: 49
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6255065c026a98430800000000000000
+      internalID: 3785739621462201638
       vertices: []
       indices: 
       edges: []
@@ -128,8 +224,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      ChatBack_0: 5951966054943167406
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
