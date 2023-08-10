@@ -1,10 +1,12 @@
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // 점수와 게임 오버 여부, 게임 UI를 관리하는 게임 매니저
 public class GameManager : MonoBehaviourPunCallbacks
 {
+
     // 외부에서 싱글톤 오브젝트를 가져올때 사용할 프로퍼티
     public static GameManager instance
     {
@@ -103,6 +105,11 @@ public class GameManager : MonoBehaviourPunCallbacks
             PhotonNetwork.LeaveRoom();
         }
     }
+
+    //public override void OnJoinedRoom()
+    //{
+    //    PhotonNetwork.LoadLevel("Stage");
+    //}
 
     // 룸을 나갈때 자동 실행되는 메서드
     public override void OnLeftRoom()
