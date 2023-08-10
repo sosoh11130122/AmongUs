@@ -106,10 +106,10 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
-    //public override void OnJoinedRoom()
-    //{
-    //    PhotonNetwork.LoadLevel("Stage");
-    //}
+    public void LoadScene()
+    {
+        PhotonNetwork.LoadLevel("Stage");
+    }
 
     // 룸을 나갈때 자동 실행되는 메서드
     public override void OnLeftRoom()
