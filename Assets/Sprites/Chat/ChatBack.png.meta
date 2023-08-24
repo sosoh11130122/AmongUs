@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ChatBack_0: 5951966054943167406
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
