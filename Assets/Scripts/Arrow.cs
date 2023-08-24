@@ -41,28 +41,5 @@ public class Arrow : MonoBehaviour
                 Debug.Log(Hit.collider.gameObject.name);
             }
         }
-
-        //Debug.DrawRay(transform.position, Vector2.up * 10, new Color(1, 0, 0));
-
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    RaycastHit2D[] Hits;
-        //    Hits = Physics2D.RaycastAll(transform.position, Vector2.up, 10.0f, LayerMask.GetMask("Vent"));
-
-        //    if (Hits.Length != null)
-        //    {
-        //        m_Impostor.transform.position = Hits[0].collider.transform.position;
-        //    }
-
-        //    for (int i = 0; i < Hits.Length; ++i)
-        //    {
-        //        RaycastHit2D Hit = Hits[i];
-
-
-        //        Debug.Log(Hit.collider.gameObject.name);
-        //    }
-        //}
-
-
     }
 }
