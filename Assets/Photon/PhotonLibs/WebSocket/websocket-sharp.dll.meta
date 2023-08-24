@@ -137,8 +137,8 @@ PluginImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 119922
-  packageName: PUN 2 - FREE
-  packageVersion: 2.42
+  productId: 45334
+  packageName: Photon Chat
+  packageVersion: 2.17
   assetPath: Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll
-  uploadId: 586964
+  uploadId: 523265
