@@ -8,8 +8,6 @@ TagManager:
   - Lever
   - UICamera
   - Impostor
-  - Bullet
-  - Arrow
   layers:
   - Default
   - TransparentFX
@@ -17,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Vent
+  - 
   - 
   - 
   - 
