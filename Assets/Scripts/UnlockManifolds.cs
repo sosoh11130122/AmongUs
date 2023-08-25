@@ -13,7 +13,9 @@ public class UnlockManifolds : MonoBehaviour
     public Text m_InputUI;
 
     public GameObject m_MissionWindow; // 미션 창.
-    public GameObject m_MissionFinishText; 
+    public GameObject m_MissionFinishText;
+
+    public Slider m_MissionProgressBar;
 
     bool m_Finish = false;
     bool m_Fail = false;
@@ -67,6 +69,8 @@ public class UnlockManifolds : MonoBehaviour
 
             m_MissionFinishText.GetComponentInChildren<Text>().enabled = true;
             m_MissionFinishText.GetComponentInChildren<Text>().text = ("임무 성공!");
+
+            m_MissionProgressBar.value += 25f;
 
             m_InputUI.text = string.Empty;
         }

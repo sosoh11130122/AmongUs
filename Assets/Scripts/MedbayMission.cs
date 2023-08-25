@@ -11,6 +11,7 @@ public class MedbayMission : MonoBehaviour
     public GameObject m_Trigger;
     public GameObject m_Player;
     public GameObject m_MissionUI;
+    public Slider m_MissionProgressBar;
 
     float m_Timer;
 
@@ -39,13 +40,10 @@ public class MedbayMission : MonoBehaviour
             if (m_Timer >= 6.5f)
             {
                 Destroy(m_Trigger);
+                m_MissionProgressBar.value += 25f;
             }
 
         }
-
-        if (!m_MissionOn)
-            m_Timer = 0f;
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

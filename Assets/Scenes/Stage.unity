@@ -2118,6 +2118,7 @@ MonoBehaviour:
   m_Trigger: {fileID: 194513881}
   m_Player: {fileID: 928241720}
   m_MissionUI: {fileID: 1986428421}
+  m_MissionProgressBar: {fileID: 862589331}
 --- !u!61 &194513884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20231,6 +20232,8 @@ MonoBehaviour:
   - {fileID: 565545334}
   - {fileID: 1593205423}
   - {fileID: 2048203729}
+  m_TaskUI: {fileID: 1159169943}
+  m_MissionProgressBar: {fileID: 862589331}
 --- !u!1 &1613868064
 GameObject:
   m_ObjectHideFlags: 0
@@ -20535,7 +20538,6 @@ GameObject:
   - component: {fileID: 1634985753}
   - component: {fileID: 1634985752}
   - component: {fileID: 1634985756}
-  - component: {fileID: 1634985757}
   m_Layer: 5
   m_Name: Lever_Img
   m_TagString: Lever
@@ -20579,6 +20581,7 @@ MonoBehaviour:
   m_DownSprite: {fileID: 21300000, guid: 20b0e73a3db013f4597334a0c0334a16, type: 3}
   m_EmptySprite: {fileID: 254594266132543341, guid: 9859d79562724f64688a65eecf3b4ce5, type: 3}
   m_EmptyOn: 0
+  m_MissionProgressBar: {fileID: 862589331}
 --- !u!61 &1634985753
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20690,22 +20693,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1634985757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634985750}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ffc1f117d0acfd4a9e021c9a9c2f402, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lever: {fileID: 1239180122}
-  m_DownSprite: {fileID: 21300000, guid: 20b0e73a3db013f4597334a0c0334a16, type: 3}
-  m_EmptySprite: {fileID: 254594266132543341, guid: 9859d79562724f64688a65eecf3b4ce5, type: 3}
-  m_EmptyOn: 0
 --- !u!1 &1636944409
 GameObject:
   m_ObjectHideFlags: 0
@@ -25507,6 +25494,7 @@ MonoBehaviour:
   m_InputUI: {fileID: 0}
   m_MissionWindow: {fileID: 0}
   m_MissionFinishText: {fileID: 0}
+  m_MissionProgressBar: {fileID: 0}
 --- !u!1 &737720904071173397
 GameObject:
   m_ObjectHideFlags: 0
@@ -27857,6 +27845,7 @@ MonoBehaviour:
   m_InputUI: {fileID: 245100557684005935}
   m_MissionWindow: {fileID: 2155036690814577768}
   m_MissionFinishText: {fileID: 1226874453349216282}
+  m_MissionProgressBar: {fileID: 862589331}
 --- !u!114 &7695893062087451844
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
     
     public bool m_EmptyOn;
 
+    public Slider m_MissionProgressBar;
+
     Image m_Sprite;
 
     public bool GetEmptyOn() 
@@ -62,6 +64,9 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHand
 
         yield return new WaitForSeconds(2.0f);
         Lever.GetComponent<Image>().sprite = m_EmptySprite;
+
+        yield return new WaitForSeconds(2.0f);
+        m_MissionProgressBar.value += 25f;
     }
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum EWireColor
 {
@@ -20,6 +21,11 @@ public class FixWiringTask : MonoBehaviour
 
     private LeftWire m_SelectedWire;
     // Start is called before the first frame update
+
+    public GameObject m_TaskUI;
+    public Slider m_MissionProgressBar;
+
+    private float m_time;
 
     private void OnEnable()
     {
@@ -111,6 +117,30 @@ public class FixWiringTask : MonoBehaviour
         if (m_SelectedWire != null)
         {
             m_SelectedWire.SetTarget(Input.mousePosition, -80f);
+        }
+
+        int Count = 0;
+
+        foreach (var Wire in m_RightWires)
+        {
+            var Connected = Wire.m_IsConnected;
+
+            if (Connected)
+                ++Count;
+
+            if (Count == 4)
+            {
+                m_time += Time.deltaTime;
+
+                if (m_time >= 2f)
+                {
+                    m_MissionProgressBar.value += 25f;
+
+                    Destroy(m_TaskUI);
+                }
+
+            }
+
         }
     }
 
