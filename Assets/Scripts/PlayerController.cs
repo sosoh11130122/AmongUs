@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
         {
             m_MoveSpeed = 0f;
             m_PlayerMove = new Vector2(0f, 0f);
-            
         }
 
         if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
@@ -65,6 +64,5 @@ public class PlayerController : MonoBehaviour
         m_PlayerMove.Normalize(); // 대각선 방향 이동 시 속도 빨라지지 않도록.
 
         m_Rigidbody.velocity = m_PlayerMove * m_MoveSpeed;
-
     }
 }

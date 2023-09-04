@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,10 @@ public class ImpostorController : MonoBehaviour
     Animator m_Animator;
     SpriteRenderer m_Sprite;
 
+    GameObject m_ArrowSystem;
+    Arrow m_ArrowSystemScript;
+
+
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -27,6 +32,10 @@ public class ImpostorController : MonoBehaviour
 
         float m_HoritontalInput = Input.GetAxisRaw("Horizontal");
         float m_VerticalInput = Input.GetAxisRaw("Vertical");
+
+        m_ArrowSystem = GameObject.Find("ArrowSystem");
+
+        m_ArrowSystemScript = m_ArrowSystem.GetComponent<Arrow>();
     }
 
     void Update()
@@ -46,13 +55,14 @@ public class ImpostorController : MonoBehaviour
         {
             m_Animator.SetBool("Move", true);
 
-            // ???? ??.
             if (Input.GetAxisRaw("Horizontal") == -1)
                 m_Sprite.flipX = true;
 
             else
                 m_Sprite.flipX = false;
         }
+
+
     }
 
     private void FixedUpdate()
@@ -77,6 +87,11 @@ public class ImpostorController : MonoBehaviour
         {
             m_Attack = true;
         }
+
+        if (collision.tag == "Vent")
+        {
+            //StartCoroutine("ImpSetActiveOff");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -87,4 +102,12 @@ public class ImpostorController : MonoBehaviour
         }
 
     }
+
+    //IEnumerator ImpSetActiveOff()
+    //{
+    //    yield return new WaitForSeconds(3);
+
+    //    m_Sprite.enabled = false;
+    //}
+
 }

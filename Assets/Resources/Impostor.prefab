@@ -268,3 +268,5 @@ MonoBehaviour:
   m_Player: {fileID: 0}
   m_PlayerAnimation: {fileID: 0}
   m_MoveSpeed: 4
+  initialSpeed: 10
+  angle: 45
