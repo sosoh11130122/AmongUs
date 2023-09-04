@@ -38,6 +38,7 @@ public class LeverUptoDown : MonoBehaviour
         //if (collision.gameObject.tag == "Lever")
          
 
+
     }
 
 }
