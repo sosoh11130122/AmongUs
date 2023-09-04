@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.ThirdPerson.PunDemos;
 
 public class ShakeMove : MonoBehaviour
 {
-    public GameObject m_GameObj;
+    public GameObject m_GameObject;
     Vector3 m_Pos;
 
     [SerializeField][Range(0.01f, 0.1f)] float m_ShakeRange = 0.05f;
@@ -29,12 +29,12 @@ public class ShakeMove : MonoBehaviour
         m_Pos.x += PosX;
         m_Pos.y += PosY;
 
-        m_GameObj.transform.position = m_Pos;
+        m_GameObject.transform.position = m_Pos;
     }
 
     void StopShake()
     {
         CancelInvoke("StartShake");
-        m_GameObj.transform.position = m_Pos;
+        m_GameObject.transform.position = m_Pos;
     }
 }

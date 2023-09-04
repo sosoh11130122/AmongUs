@@ -65,12 +65,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
     private void Start()
     {
-
-        if (!PhotonNetwork.IsMasterClient)
-        {
-            return;
-        }
-
         // 생성할 랜덤 위치 지정
         Vector3 randomSpawnPos = Random.insideUnitSphere * 5f;
         // 위치 y값은 0으로 변경
