@@ -3,11 +3,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// 점수와 게임 오버 여부, 게임 UI를 관리하는 게임 매니저
-public class GameManager : MonoBehaviourPunCallbacks
+public class LobbySceneManager : MonoBehaviourPunCallbacks
 {
     // 외부에서 싱글톤 오브젝트를 가져올때 사용할 프로퍼티
-    public static GameManager instance
+    public static LobbySceneManager instance
     {
         get
         {
@@ -15,7 +14,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             if (m_instance == null)
             {
                 // 씬에서 GameManager 오브젝트를 찾아 할당
-                m_instance = FindObjectOfType<GameManager>();
+                m_instance = FindObjectOfType<LobbySceneManager>();
             }
 
             // 싱글톤 오브젝트를 반환
@@ -23,13 +22,9 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
-    private static GameManager m_instance; // 싱글톤이 할당될 static 변수
+    private static LobbySceneManager m_instance; // 싱글톤이 할당될 static 변수
 
     public GameObject playerPrefab; // 생성할 플레이어 캐릭터 프리팹
-    public GameObject ImpostorPrefab;
-
-    private int ImpostorCount = 0;
-    private int ImpostorNum = 1;
 
     private int score = 0; // 현재 게임 점수
     public bool isGameover { get; private set; } // 게임 오버 상태
@@ -69,20 +64,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     private void Start()
     {
         // 생성할 랜덤 위치 지정
-        Vector3 randomSpawnPos = Random.insideUnitSphere * 5f;
-        // 위치 y값은 0으로 변경
-        randomSpawnPos.y = 0f;
+        Vector3 randomSpawnPos = new Vector3(0, 0, 0);
 
-        if (ImpostorCount < ImpostorNum)
-        {
-            PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
-
-            ++ImpostorCount;
-        }
-
-        else
-            PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
-
+        PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
     }
 
     // 점수를 추가하고 UI 갱신
@@ -127,16 +111,4 @@ public class GameManager : MonoBehaviourPunCallbacks
         // 룸을 나가면 로비 씬으로 돌아감
         SceneManager.LoadScene("LobbyScene");
     }
-
-    //public void SelectImpostor()
-    //{
-    //    //Destroy(gameObject);
-
-    //    // 생성할 랜덤 위치 지정
-    //    Vector3 randomSpawnPos = Random.insideUnitSphere * 5f;
-    //    // 위치 y값은 0으로 변경
-    //    randomSpawnPos.y = 0f;
-
-    //    PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
-    //}
 }

@@ -6744,6 +6744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectionInfoText: {fileID: 359619911}
   joinButton: {fileID: 164776069}
+  m_ImpostorButton: {fileID: 992837213}
 --- !u!4 &1763464085
 Transform:
   m_ObjectHideFlags: 0

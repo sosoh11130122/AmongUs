@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using Unity.VisualScripting;
 using Photon.Pun.Demo.PunBasics;
+using UnityEngine.SocialPlatforms.Impl;
 
 // 마스터(매치 메이킹) 서버와 룸 접속을 담당
 public class LobbyManager : MonoBehaviourPunCallbacks
@@ -14,6 +15,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public Text connectionInfoText; // 네트워크 정보를 표시할 텍스트
     public Button joinButton; // 룸 접속 버튼
+
+    public static int m_ImpostorCount = 1;
+
+    [SerializeField]
+    private Button m_ImpostorButton;
 
     // 게임 실행과 동시에 마스터 서버 접속 시도
     private void Start()
@@ -105,11 +111,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     //    yield return null;
     //}
 
-    //private void Update()
-    //{
-    //    if (PhotonNetwork.CurrentRoom.Name == "LobbyScene")
-    //    {
-    //        CreatePlayer();
-    //    }
-    //}
+    private void Update()
+    {
+        if (m_ImpostorButton.enabled)
+        {
+            m_ImpostorCount = 2;
+        }
+    }
+
 }

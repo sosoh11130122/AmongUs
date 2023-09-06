@@ -17,6 +17,9 @@ public class ImpostorController : MonoBehaviour
     Animator m_Animator;
     SpriteRenderer m_Sprite;
 
+    GameObject m_ArrowSystem;
+    Arrow m_ArrowSystemScript;
+
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
@@ -27,6 +30,10 @@ public class ImpostorController : MonoBehaviour
 
         float m_HoritontalInput = Input.GetAxisRaw("Horizontal");
         float m_VerticalInput = Input.GetAxisRaw("Vertical");
+
+        m_ArrowSystem = GameObject.Find("ArrowSystem");
+        m_ArrowSystemScript = m_ArrowSystem.GetComponent<Arrow>();
+
     }
 
     void Update()
