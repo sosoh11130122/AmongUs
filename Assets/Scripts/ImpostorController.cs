@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ImpostorController : MonoBehaviour
 {
-    public GameObject m_Player;
-    public Animator m_PlayerAnimation;
+    public bool m_Dead = false;
 
     bool m_Attack = false;
 
@@ -26,8 +25,6 @@ public class ImpostorController : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Sprite = GetComponent<SpriteRenderer>();
 
-        m_PlayerAnimation = m_Player.GetComponent<Animator>();
-
         float m_HoritontalInput = Input.GetAxisRaw("Horizontal");
         float m_VerticalInput = Input.GetAxisRaw("Vertical");
 
@@ -42,7 +39,7 @@ public class ImpostorController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                m_PlayerAnimation.SetBool("Dead", true);
+                m_Dead = true;
             }
         }
 
@@ -93,5 +90,10 @@ public class ImpostorController : MonoBehaviour
             m_Attack = false;
         }
 
+    }
+
+    public bool GetDead()
+    {
+        return m_Dead;
     }
 }
