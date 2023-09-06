@@ -1,3 +1,4 @@
+using ExitGames.Client.Photon.StructWrapping;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,11 +14,18 @@ public class PlayerController : MonoBehaviour
     Animator       m_Animator;
     SpriteRenderer m_Sprite;
 
+    // 임포스터
+    GameObject m_Impostor;
+    bool m_Dead;
+
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
         m_Sprite = GetComponent<SpriteRenderer>();
+
+        m_Impostor = GameObject.FindGameObjectWithTag("Impostor");
+        m_Dead = m_Impostor.GetComponent<ImpostorController>().GetDead();
 
         float m_HoritontalInput = Input.GetAxisRaw("Horizontal");
         float m_VerticalInput = Input.GetAxisRaw("Vertical");
@@ -27,6 +35,11 @@ public class PlayerController : MonoBehaviour
     {
         //if(m_IsDead) 
         //    return;
+
+        if (m_Dead == true)
+        {
+            m_Animator.SetBool("Dead", true);
+        }
 
         if (m_Animator.GetBool("Dead"))
         {
