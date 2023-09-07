@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chattinglist_0: -8016990596815821524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      votingicon_0: 24688962665577165
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
