@@ -18,6 +18,6 @@ public class NickName : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       this.transform.position = Camera.main.WorldToScreenPoint(new Vector3(m_Player.transform.position.x + 0.8f, m_Player.transform.position.y + 0.02f));
+        this.transform.position = Camera.main.WorldToScreenPoint(new Vector3(m_Player.transform.position.x + 0.8f, m_Player.transform.position.y + 0.02f));
     }
 }
