@@ -1,7 +1,9 @@
+using NUnit.Framework;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 // 점수와 게임 오버 여부, 게임 UI를 관리하는 게임 매니저
 public class GameManager : MonoBehaviourPunCallbacks
@@ -27,6 +29,10 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public GameObject playerPrefab; // 생성할 플레이어 캐릭터 프리팹
     public GameObject ImpostorPrefab;
+
+    //0907
+    public PhotonView m_PhotonView; 
+    List<int> m_PlayerList = new List<int>();
 
     private int ImpostorCount = 0;
     private int ImpostorNum = 1;
@@ -68,29 +74,29 @@ public class GameManager : MonoBehaviourPunCallbacks
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
     private void Start()
     {
-
-        if (!PhotonNetwork.IsMasterClient)
-            return;
-
-
         // 생성할 랜덤 위치 지정
         Vector3 randomSpawnPos = Random.insideUnitSphere * 5f;
         // 위치 y값은 0으로 변경
         randomSpawnPos.y = 0f;
 
-        if (ImpostorCount < ImpostorNum)
+        int Impo = Random.Range(0, PhotonNetwork.PlayerList.Length - 1);
+
+        for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
         {
-            PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[i])
+            {
+                if (i == Impo)
+                {
+                    PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
+                }
 
-            ++ImpostorCount;
+                else
+                {
+                    PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
+                }
+            }
+
         }
-
-        else
-        {
-            PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
-            Debug.Log("플레이어 생성");
-        }
-
     }
 
     // 점수를 추가하고 UI 갱신
@@ -122,6 +128,9 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.LeaveRoom();
         }
+
+        // 0907
+
     }
 
     public void LoadScene()
@@ -147,4 +156,5 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     //    PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
     //}
+
 }
