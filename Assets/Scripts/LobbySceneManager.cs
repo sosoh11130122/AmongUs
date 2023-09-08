@@ -58,6 +58,8 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
             // 자신을 파괴
             Destroy(gameObject);
         }
+
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
@@ -100,7 +102,7 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
         }
     }
 
-    public void LoadScene()
+    public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("Stage");
     }
