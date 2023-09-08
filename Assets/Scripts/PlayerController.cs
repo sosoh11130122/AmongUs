@@ -1,4 +1,5 @@
 using ExitGames.Client.Photon.StructWrapping;
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,6 +7,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public PhotonView m_PhotonView;
+
     public float m_MoveSpeed = 4.0f;
 
     Vector2 m_PlayerMove = new Vector2();
@@ -15,7 +18,6 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer m_Sprite;
 
     // 임포스터
-    GameObject m_Impostor;
     bool m_Dead;
 
     void Start()
@@ -24,8 +26,8 @@ public class PlayerController : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Sprite = GetComponent<SpriteRenderer>();
 
-        m_Impostor = GameObject.FindGameObjectWithTag("Impostor");
-        m_Dead = m_Impostor.GetComponent<ImpostorController>().GetDead();
+        // null reference
+        //m_Dead = GetComponent<ImpostorController>().GetDead();
 
         float m_HoritontalInput = Input.GetAxisRaw("Horizontal");
         float m_VerticalInput = Input.GetAxisRaw("Vertical");
@@ -33,6 +35,9 @@ public class PlayerController : MonoBehaviour
 
     void Update() 
     {
+        if (!m_PhotonView.IsMine)
+            return;
+
         //if(m_IsDead) 
         //    return;
 
@@ -66,9 +71,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() // 규칙적인 호출로 물리 계산 등에 좋음.
     {
+        if (!m_PhotonView.IsMine)
+            return;
+
         Move();
     }
 
+    [PunRPC]
     void Move()
     {
         m_PlayerMove.x = Input.GetAxisRaw("Horizontal");

@@ -7089,8 +7089,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 914270551}
-        m_TargetAssemblyTypeName: LobbySceneManager, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_TargetAssemblyTypeName: Photon.Pun.MonoBehaviourPunCallbacks, PhotonUnityNetworking
+        m_MethodName: OnJoinedRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
