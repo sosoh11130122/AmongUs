@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5803583507596944005}
   - component: {fileID: 8444403650177004936}
   - component: {fileID: 7755190487558677032}
+  - component: {fileID: 7269146895724954245}
   m_Layer: 0
   m_Name: Impostor
   m_TagString: Impostor
@@ -37,7 +38,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7613185547278326770
 SpriteRenderer:
@@ -197,6 +198,7 @@ MonoBehaviour:
   observableSearch: 0
   ObservedComponents:
   - {fileID: 5803583507596944005}
+  - {fileID: 7269146895724954245}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -265,5 +267,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a5799a58d602949b3b896f55ba96ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerAnimation: {fileID: 8081390140822926542, guid: 7091c89fd1869764a83d2669415cb89d, type: 3}
+  m_PhotonView: {fileID: 4587977790179046001}
+  m_Dead: 0
   m_MoveSpeed: 4
+--- !u!114 &7269146895724954245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081390140822926542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 1
+    Name: Move
+  - Type: 4
+    SynchronizeType: 1
+    Name: VentOn
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0

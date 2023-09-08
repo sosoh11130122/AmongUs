@@ -1,9 +1,12 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ImpostorController : MonoBehaviour
 {
+    public PhotonView m_PhotonView;
+
     public bool m_Dead = false;
 
     bool m_Attack = false;
@@ -35,6 +38,9 @@ public class ImpostorController : MonoBehaviour
 
     void Update()
     {
+        if (!m_PhotonView.IsMine)
+            return;
+
         if (m_Attack)
         {
             if (Input.GetKeyDown(KeyCode.Q))
@@ -61,9 +67,13 @@ public class ImpostorController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!m_PhotonView.IsMine)
+            return;
+
         Move();
     }
 
+    [PunRPC]
     void Move()
     {
         m_ImpostorMove.x = Input.GetAxisRaw("Horizontal");
@@ -92,6 +102,7 @@ public class ImpostorController : MonoBehaviour
 
     }
 
+    [PunRPC]
     public bool GetDead()
     {
         return m_Dead;
