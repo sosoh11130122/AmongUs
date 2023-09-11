@@ -1,3 +1,4 @@
+using Photon.Pun;
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,8 @@ using UnityEngine.UI;
 
 public class MedbayMission : MonoBehaviour
 {
+    public PhotonView m_PhotonView;
+
     public GameObject m_Mission;
     public GameObject m_Trigger;
     public GameObject m_Player;
@@ -23,6 +26,9 @@ public class MedbayMission : MonoBehaviour
     void Start()
     {
         //m_Mission = GetComponent<GameObject>();
+
+        if (!m_PhotonView.IsMine)
+            return;
     }
 
     // Update is called once per frame
