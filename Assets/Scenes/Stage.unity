@@ -342,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 8081390140822926542, guid: 7091c89fd1869764a83d2669415cb89d, type: 3}
   ImpostorPrefab: {fileID: 8081390140822926542, guid: 04c20be32976cf24f95f83fd7a425d86, type: 3}
+  m_PhotonView: {fileID: 0}
 --- !u!4 &23681620
 Transform:
   m_ObjectHideFlags: 0
@@ -2115,9 +2116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a626ec6d480cfa24b91834e65d72d7b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PhotonView: {fileID: 4587977790179046001, guid: 7091c89fd1869764a83d2669415cb89d, type: 3}
   m_Mission: {fileID: 1033692870}
   m_Trigger: {fileID: 194513881}
-  m_Player: {fileID: 0}
+  m_Player: {fileID: 8081390140822926542, guid: 7091c89fd1869764a83d2669415cb89d, type: 3}
   m_MissionUI: {fileID: 1986428421}
   m_MissionProgressBar: {fileID: 862589331}
 --- !u!61 &194513884
@@ -12846,6 +12848,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1033692871}
+  - component: {fileID: 1033692872}
   m_Layer: 0
   m_Name: Medbay_Mission
   m_TagString: Untagged
@@ -12871,6 +12874,24 @@ Transform:
   m_Father: {fileID: 1951080923}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1033692872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033692870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a626ec6d480cfa24b91834e65d72d7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PhotonView: {fileID: 0}
+  m_Mission: {fileID: 1033692870}
+  m_Trigger: {fileID: 194513881}
+  m_Player: {fileID: 8081390140822926542, guid: 7091c89fd1869764a83d2669415cb89d, type: 3}
+  m_MissionUI: {fileID: 1986428421}
+  m_MissionProgressBar: {fileID: 0}
 --- !u!1 &1053706858
 GameObject:
   m_ObjectHideFlags: 0
@@ -20794,6 +20815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e13e96df6e4f9b4db63b421e705f6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PhotonView: {fileID: 4587977790179046001, guid: 7091c89fd1869764a83d2669415cb89d, type: 3}
   m_LeftWires:
   - {fileID: 1560169627}
   - {fileID: 2122393080}
