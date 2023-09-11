@@ -41,6 +41,8 @@ MonoBehaviour:
   - RespawnSpaceship
   - GetDead
   - Move
+  - ReceiveMsg
+  - GetMessage
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

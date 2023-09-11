@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject playerPrefab; // 생성할 플레이어 캐릭터 프리팹
     public GameObject ImpostorPrefab;
 
+    // m_NickNameUI
+    public GameObject m_NickNameUI; //m_NickNameUI
+
+
     //0907
     public PhotonView m_PhotonView; 
     List<int> m_PlayerList = new List<int>();
@@ -85,6 +89,13 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[i])
             {
+
+                // m_NickNameUI
+                PhotonNetwork.LocalPlayer.NickName = PlayerPrefs.GetString("NickName");
+
+                // m_NickNameUI
+                GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity);
+
                 if (i == Impo)
                 {
                     PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
@@ -95,8 +106,8 @@ public class GameManager : MonoBehaviourPunCallbacks
                     PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
                 }
             }
-
         }
+
     }
 
     // 점수를 추가하고 UI 갱신
