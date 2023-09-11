@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ public enum EWireColor
 }
 public class FixWiringTask : MonoBehaviour
 {
+    public PhotonView m_PhotonView;
+
+
     [SerializeField]
     private List<LeftWire> m_LeftWires;
 
@@ -70,6 +74,11 @@ public class FixWiringTask : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (!m_PhotonView.IsMine)
+            return;
+    }
 
     // Update is called once per frame
     void Update()
