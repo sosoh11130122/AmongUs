@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChatManager_B : MonoBehaviour
+public class ChatUITrigger : MonoBehaviour
 {
-    public InputField m_Input;
-    public Text m_Text;
-    public Button m_Button;
-
+    public GameObject m_ChatUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +18,11 @@ public class ChatManager_B : MonoBehaviour
         
     }
 
-    public void ButtonClick()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        m_Text.text = m_Input.text;
-        m_Input.text = "";
+        if (other.tag == "Player" || other.tag == "Impostor")
+        {
+            m_ChatUI.SetActive(true);
+        }
     }
 }
