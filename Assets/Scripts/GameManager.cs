@@ -99,20 +99,20 @@ public class GameManager : MonoBehaviourPunCallbacks
                 {
                     PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
 
-                    m_NickNameUI.GetComponent<Text>().text = PhotonNetwork.LocalPlayer.NickName;
+                  //  m_NickNameUI.GetComponent<Text>().text = PhotonNetwork.LocalPlayer.NickName;
 
                     // 임포스터 포톤뷰에서 가져오기
 
-                    GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity, GameObject.Find("Canvas").transform);
+                   // GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity, GameObject.Find("Canvas").transform);
                 }
 
                 else
                 {
                     PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
 
-                    m_NickNameUI.GetComponent<Text>().text = PhotonNetwork.LocalPlayer.NickName;
+                   // m_NickNameUI.GetComponent<Text>().text = PhotonNetwork.LocalPlayer.NickName;
 
-                    GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity, GameObject.Find("Canvas").transform);
+                   // GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity, GameObject.Find("Canvas").transform);
                 }
             }
         }

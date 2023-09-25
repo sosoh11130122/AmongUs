@@ -2,14 +2,17 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ImpostorController : MonoBehaviour
+public class ImpostorController : MonoBehaviourPunCallbacks
 {
     public PhotonView m_PhotonView;
 
     public bool m_Dead = false;
 
     bool m_Attack = false;
+
+    public Text m_Nick;
 
     public float m_MoveSpeed = 4.0f;
 
@@ -24,9 +27,25 @@ public class ImpostorController : MonoBehaviour
 
     void Start()
     {
+        if (m_PhotonView.IsMine)
+        {
+            m_Nick.text = PhotonNetwork.LocalPlayer.NickName;
+        }
+
+        else
+        {
+            m_Nick.text = m_PhotonView.Owner.NickName;
+        }
+
         m_Rigidbody = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
         m_Sprite = GetComponent<SpriteRenderer>();
+
+        // m_Nick.GetComponent<Text>().text = PhotonNetwork.LocalPlayer.NickName;
+        //m_Nick.GetComponent<Text>().text = PlayerPrefs.GetString("NickName");
+        //m_PhotonView.RPC("SetNIckname", RpcTarget.AllBuffered);
+
+
 
         float m_HoritontalInput = Input.GetAxisRaw("Horizontal");
         float m_VerticalInput = Input.GetAxisRaw("Vertical");
@@ -63,6 +82,8 @@ public class ImpostorController : MonoBehaviour
             else
                 m_Sprite.flipX = false;
         }
+
+        m_Nick.transform.position = Camera.main.WorldToScreenPoint(new Vector3(this.transform.position.x + 0.8f, this.transform.position.y + 0.02f));
     }
 
     private void FixedUpdate()
@@ -106,5 +127,12 @@ public class ImpostorController : MonoBehaviour
     public bool GetDead()
     {
         return m_Dead;
+    }
+
+    [PunRPC]
+    void SetNIckname()
+    {
+        m_Nick.GetComponent<Text>().text = PlayerPrefs.GetString("NickName");
+
     }
 }
