@@ -30,6 +30,7 @@ public class ImpostorController : MonoBehaviourPunCallbacks
         if (m_PhotonView.IsMine)
         {
             m_Nick.text = PhotonNetwork.LocalPlayer.NickName;
+            m_Nick.color = Color.red;
         }
 
         else

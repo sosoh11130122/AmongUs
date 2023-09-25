@@ -72,8 +72,14 @@ public class GameManager : MonoBehaviourPunCallbacks
             // 자신을 파괴
             Destroy(gameObject);
         }
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.AutomaticallySyncScene = true;
+        }
     }
 
+    [PunRPC]
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
     private void Start()
     {
@@ -82,7 +88,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         // 위치 y값은 0으로 변경
         randomSpawnPos.y = 0f;
 
-        int Impo = Random.Range(0, PhotonNetwork.PlayerList.Length - 1);
+        int Impo = Random.Range(1, PhotonNetwork.PlayerList.Length);
 
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
         {
