@@ -6684,7 +6684,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Drag: {fileID: 1634985752}
-  m_LeverUI: {fileID: 1239180117}
 --- !u!114 &542074592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9021,27 +9020,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2153673766311898163, guid: 8b98218626274444f8c231379811c7e8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2153673766311898163, guid: 8b98218626274444f8c231379811c7e8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2153673766311898163, guid: 8b98218626274444f8c231379811c7e8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 348
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2153673766311898163, guid: 8b98218626274444f8c231379811c7e8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 63
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2153673766311898163, guid: 8b98218626274444f8c231379811c7e8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 174
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2153673766311898163, guid: 8b98218626274444f8c231379811c7e8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2888615568289112535, guid: 8b98218626274444f8c231379811c7e8, type: 3}
       propertyPath: m_IsActive
@@ -14779,7 +14778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1094563231
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17412,8 +17411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LeverUp: {fileID: 1239180119}
-  m_Lever: {fileID: 1239180117}
-  m_View: {fileID: 4587977790179046001, guid: 7091c89fd1869764a83d2669415cb89d, type: 3}
 --- !u!61 &1247268346
 BoxCollider2D:
   m_ObjectHideFlags: 0

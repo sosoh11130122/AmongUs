@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class LobbySceneManager : MonoBehaviourPunCallbacks
 {
+    public PhotonView m_PlayerPhotonView;
+
     // 외부에서 싱글톤 오브젝트를 가져올때 사용할 프로퍼티
     public static LobbySceneManager instance
     {
@@ -73,6 +75,8 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
 
+        m_PlayerPhotonView.RPC("SetPlayerRandomColor", RpcTarget.All);
+       
         //playerPrefab.GetComponent<SpriteRenderer>().material.SetColor("_PlayerColor", PlayerColor.GetColor((EPlayerColor)Random.Range(0, 12)));
     }
 
@@ -118,4 +122,11 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
         // 룸을 나가면 로비 씬으로 돌아감
         SceneManager.LoadScene("LobbyScene");
     }
+
+    [PunRPC]
+    void SetPlayerRandomColor()
+    {
+        playerPrefab.GetComponent<SpriteRenderer>().material.SetColor("_PlayerColor", PlayerColor.GetColor((EPlayerColor)Random.Range(0, 12)));
+    }
+
 }
