@@ -2,14 +2,17 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ImpostorController : MonoBehaviour
+public class ImpostorController : MonoBehaviourPunCallbacks
 {
     public PhotonView m_PhotonView;
 
     public bool m_Dead = false;
 
     bool m_Attack = false;
+
+    public Text m_Nick;
 
     public float m_MoveSpeed = 4.0f;
 
@@ -22,8 +25,20 @@ public class ImpostorController : MonoBehaviour
     GameObject m_ArrowSystem;
     Arrow m_ArrowSystemScript;
 
+    [PunRPC]
     void Start()
     {
+        if (m_PhotonView.IsMine)
+        {
+            m_Nick.text = PhotonNetwork.LocalPlayer.NickName;
+            m_Nick.color = Color.red;
+        }
+
+        else
+        {
+            m_Nick.text = m_PhotonView.Owner.NickName;
+        }
+
         m_Rigidbody = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
         m_Sprite = GetComponent<SpriteRenderer>();
@@ -63,6 +78,7 @@ public class ImpostorController : MonoBehaviour
             else
                 m_Sprite.flipX = false;
         }
+
     }
 
     private void FixedUpdate()
@@ -71,6 +87,10 @@ public class ImpostorController : MonoBehaviour
             return;
 
         Move();
+
+        //Nick();
+        m_PhotonView.RPC("Nick", RpcTarget.All);
+
     }
 
     [PunRPC]
@@ -82,6 +102,12 @@ public class ImpostorController : MonoBehaviour
         m_ImpostorMove.Normalize(); 
 
         m_Rigidbody.velocity = m_ImpostorMove * m_MoveSpeed;
+    }
+
+    [PunRPC]
+    void Nick()
+    {
+        m_Nick.transform.position = Camera.main.WorldToScreenPoint(new Vector3(this.transform.position.x + 0.8f, this.transform.position.y + 0.02f));
     }
 
 

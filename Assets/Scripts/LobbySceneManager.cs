@@ -61,10 +61,7 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
             Destroy(gameObject);
         }
 
-        if (PhotonNetwork.IsMasterClient)
-        {
-            PhotonNetwork.AutomaticallySyncScene = true;
-        }
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
@@ -113,7 +110,10 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-         PhotonNetwork.LoadLevel("Stage");
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.LoadLevel("Stage");
+        }
     }
 
     // 룸을 나갈때 자동 실행되는 메서드
