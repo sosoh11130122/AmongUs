@@ -45,6 +45,4 @@ public class PlayerColor : MonoBehaviour
     public static Color Brown { get { return m_Colors[(int)EPlayerColor.Brown]; } }
     public static Color Cyan { get { return m_Colors[(int)EPlayerColor.Cyan]; } }
     public static Color Lime { get { return m_Colors[(int)EPlayerColor.Lime]; } }
-
-
 }

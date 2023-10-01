@@ -72,6 +72,8 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
         Vector3 randomSpawnPos = new Vector3(0, 0, 0);
 
         PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
+
+        //playerPrefab.GetComponent<SpriteRenderer>().material.SetColor("_PlayerColor", PlayerColor.GetColor((EPlayerColor)Random.Range(0, 12)));
     }
 
     // 점수를 추가하고 UI 갱신
