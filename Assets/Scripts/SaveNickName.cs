@@ -1,10 +1,9 @@
-using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SaveNickName : MonoBehaviourPunCallbacks
+public class SaveNickName : MonoBehaviour
 {
     public InputField m_InputNickName;
     // Start is called before the first frame update
@@ -19,7 +18,6 @@ public class SaveNickName : MonoBehaviourPunCallbacks
     public void Save()
     {
         PlayerPrefs.SetString("NickName", m_InputNickName.text);
-        PhotonNetwork.NickName = m_InputNickName.text;
     }
 
     public void Load()

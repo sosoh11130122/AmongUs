@@ -1,19 +1,15 @@
 using ExitGames.Client.Photon.StructWrapping;
 using Photon.Pun;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviourPunCallbacks
+public class PlayerController : MonoBehaviour
 {
     public PhotonView m_PhotonView;
 
     public float m_MoveSpeed = 4.0f;
-
-    public Text m_Nick;
 
     Vector2 m_PlayerMove = new Vector2();
 
@@ -24,27 +20,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
     // 임포스터
     bool m_Dead;
 
-    [PunRPC]
     void Start()
     {
-        if (m_PhotonView.IsMine)
-        {
-            m_Nick.text = PhotonNetwork.LocalPlayer.NickName;
-        }
-
-        else
-        {
-            m_Nick.text = m_PhotonView.Owner.NickName;
-        }
-
         m_Rigidbody = GetComponent<Rigidbody2D>();
         m_Animator = GetComponent<Animator>();
         m_Sprite = GetComponent<SpriteRenderer>();
-
-        //m_Nick.GetComponent<Text>().text = PhotonNetwork.LocalPlayer.NickName;
-        //m_Nick.GetComponent<Text>().text = PlayerPrefs.GetString("NickName");
-        //m_PhotonView.RPC("SetNIckname", RpcTarget.AllBuffered);
-
 
         // null reference
         //m_Dead = GetComponent<ImpostorController>().GetDead();
@@ -87,8 +67,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
             else
                 m_Sprite.flipX = false;
         }
-
-        m_Nick.transform.position = Camera.main.WorldToScreenPoint(new Vector3(this.transform.position.x + 0.8f, this.transform.position.y + 0.02f));
     }
 
     private void FixedUpdate() // 규칙적인 호출로 물리 계산 등에 좋음.
@@ -109,13 +87,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
         m_PlayerMove.Normalize(); // 대각선 방향 이동 시 속도 빨라지지 않도록.
 
         m_Rigidbody.velocity = m_PlayerMove * m_MoveSpeed;
-
-    }
-
-    [PunRPC]
-    void SetNIckname()
-    {
-        m_Nick.GetComponent<Text>().text = PlayerPrefs.GetString("NickName");
 
     }
 }

@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     // m_NickNameUI
     public GameObject m_NickNameUI; //m_NickNameUI
 
+
     //0907
     public PhotonView m_PhotonView; 
     List<int> m_PlayerList = new List<int>();
@@ -72,14 +73,8 @@ public class GameManager : MonoBehaviourPunCallbacks
             // 자신을 파괴
             Destroy(gameObject);
         }
-
-        if (PhotonNetwork.IsMasterClient)
-        {
-            PhotonNetwork.AutomaticallySyncScene = true;
-        }
     }
 
-    [PunRPC]
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
     private void Start()
     {
@@ -94,34 +89,25 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[i])
             {
+
                 // m_NickNameUI
                 PhotonNetwork.LocalPlayer.NickName = PlayerPrefs.GetString("NickName");
-                //photonView.Owner.NickName = PlayerPrefs.GetString("NickName");
 
-                //m_NickNameUI.GetComponent<Text>().text = "";
-
+                // m_NickNameUI
+                GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity);
 
                 if (i == Impo)
                 {
                     PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
-
-                  //  m_NickNameUI.GetComponent<Text>().text = PhotonNetwork.LocalPlayer.NickName;
-
-                    // 임포스터 포톤뷰에서 가져오기
-
-                   // GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity, GameObject.Find("Canvas").transform);
                 }
 
                 else
                 {
                     PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
-
-                   // m_NickNameUI.GetComponent<Text>().text = PhotonNetwork.LocalPlayer.NickName;
-
-                   // GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity, GameObject.Find("Canvas").transform);
                 }
             }
         }
+
     }
 
     // 점수를 추가하고 UI 갱신
