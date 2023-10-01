@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ShowText : MonoBehaviour
 {
     public Drag m_Drag;
-    public GameObject m_LeverUI;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +19,6 @@ public class ShowText : MonoBehaviour
         if (m_Drag.GetEmptyOn())
         {
             StartCoroutine(WaitForIt());
-        }
-
-        if (GetComponent<Text>().enabled)
-        {
-            StartCoroutine(DestroyAll());
 
         }
     }
@@ -35,13 +28,5 @@ public class ShowText : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
 
         GetComponent<Text>().enabled = true;
-    }
-
-    IEnumerator DestroyAll()
-    {
-        yield return new WaitForSeconds(2.0f);
-
-        Destroy(this);
-        Destroy(m_LeverUI);
     }
 }
