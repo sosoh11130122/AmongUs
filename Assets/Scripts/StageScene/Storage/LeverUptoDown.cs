@@ -35,10 +35,6 @@ public class LeverUptoDown : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ChangeImage();
-        //if (collision.gameObject.tag == "Lever")
-         
-
-
     }
 
 }
