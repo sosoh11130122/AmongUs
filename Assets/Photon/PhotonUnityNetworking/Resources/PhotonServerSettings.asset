@@ -45,6 +45,8 @@ MonoBehaviour:
   - GetMessage
   - SetName
   - SetPlayerRandomColor
+  - Start
+  - Nick
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
