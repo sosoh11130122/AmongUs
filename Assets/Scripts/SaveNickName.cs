@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviourPunCallbacks
+public class SaveNickName : MonoBehaviourPunCallbacks
 {
     public InputField m_InputNickName;
     // Start is called before the first frame update

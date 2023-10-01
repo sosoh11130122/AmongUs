@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         // 위치 y값은 0으로 변경
         randomSpawnPos.y = 0f;
 
-        int Impo = Random.Range(1, PhotonNetwork.PlayerList.Length);
+        int Impo = Random.Range(0, PhotonNetwork.PlayerList.Length - 1);
 
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
         {
