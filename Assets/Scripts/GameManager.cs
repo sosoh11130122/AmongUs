@@ -91,10 +91,10 @@ public class GameManager : MonoBehaviourPunCallbacks
             {
 
                 // m_NickNameUI
-                PhotonNetwork.LocalPlayer.NickName = PlayerPrefs.GetString("NickName");
+               // PhotonNetwork.LocalPlayer.NickName = PlayerPrefs.GetString("NickName");
 
                 // m_NickNameUI
-                GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity);
+                //GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity);
 
                 if (i == Impo)
                 {

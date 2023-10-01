@@ -22,6 +22,6 @@ public class NickName : MonoBehaviourPunCallbacks
     {
         this.transform.position = Camera.main.WorldToScreenPoint(new Vector3(m_Player.transform.position.x + 0.8f, m_Player.transform.position.y + 0.02f));
 
-
+       
     }
 }
