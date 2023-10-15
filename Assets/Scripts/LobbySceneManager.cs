@@ -7,6 +7,10 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
 {
     public PhotonView m_PlayerPhotonView;
 
+    public int m_PlayerCount = 0;
+
+    public Text m_PlayerCountUI;
+
     // 외부에서 싱글톤 오브젝트를 가져올때 사용할 프로퍼티
     public static LobbySceneManager instance
     {
@@ -106,8 +110,11 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.LeaveRoom();
         }
-    }
 
+        m_PlayerCountUI.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
+       // m_PlayerCount = PhotonNetwork.CurrentRoom.PlayerCount;
+    }
+    
     public override void OnJoinedRoom()
     {
         if (PhotonNetwork.IsMasterClient)

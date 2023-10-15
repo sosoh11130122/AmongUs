@@ -18,8 +18,13 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public static int m_ImpostorCount = 1;
 
+    public Text m_CitizenCountUI;
+
+    LobbySceneManager m_LobbySceneManager;
+
     [SerializeField]
     private Button m_ImpostorButton;
+
 
     // 게임 실행과 동시에 마스터 서버 접속 시도
     private void Start()
@@ -29,6 +34,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         joinButton.interactable = false;
         connectionInfoText.text = "1.마스터 서버에 접속 중...";
+
+       // m_LobbySceneManager = new LobbySceneManager();
     }
 
     // 마스터 서버 접속 성공시 자동 실행
@@ -38,6 +45,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         joinButton.interactable = true;
 
         connectionInfoText.text = "2.온라인 : 마스터 서버와 연결됨";
+
+      // Debug.Log(PhotonNetwork.Room.Name);
     }
 
     // 마스터 서버 접속 실패시 자동 실행
@@ -113,10 +122,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if (m_ImpostorButton.enabled)
-        {
-            m_ImpostorCount = 2;
-        }
+        //m_CitizenCountUI.text = m_LobbySceneManager.m_PlayerCount.ToString();
     }
 
 }
