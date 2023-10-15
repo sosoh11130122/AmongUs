@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Photon.Pun.UtilityScripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,6 @@ public class SaveNickName : MonoBehaviourPunCallbacks
     {
         PlayerPrefs.SetString("NickName", m_InputNickName.text);
         PhotonNetwork.NickName = m_InputNickName.text;
-
     }
 
     public void Load()
