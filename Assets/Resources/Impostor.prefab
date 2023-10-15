@@ -222,7 +222,7 @@ Transform:
   m_Children:
   - {fileID: 7955673916895396039}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7613185547278326770
 SpriteRenderer:
@@ -455,6 +455,7 @@ MonoBehaviour:
   m_Dead: 0
   m_Nick: {fileID: 7669190413359719886}
   m_MoveSpeed: 4
+  m_Table: {fileID: 0}
 --- !u!114 &7269146895724954245
 MonoBehaviour:
   m_ObjectHideFlags: 0

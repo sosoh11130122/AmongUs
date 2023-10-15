@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
+using Photon.Realtime;
 
 // 점수와 게임 오버 여부, 게임 UI를 관리하는 게임 매니저
 public class GameManager : MonoBehaviourPunCallbacks
@@ -29,6 +31,14 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public GameObject playerPrefab; // 생성할 플레이어 캐릭터 프리팹
     public GameObject ImpostorPrefab;
+
+    public GameObject m_ImpostorScene;
+    public GameObject m_CrewScene;
+    public Image m_BlackScene;
+
+    public bool m_SpawnButton = false;
+
+    public Collider2D m_Table;
 
     // m_NickNameUI
     //public GameObject m_NickNameUI; //m_NickNameUI
@@ -74,6 +84,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             Destroy(gameObject);
         }
 
+        m_SpawnButton = GetComponent<bool>();
     }
 
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
@@ -81,6 +92,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         // 생성할 랜덤 위치 지정
         Vector3 randomSpawnPos = Random.insideUnitSphere * 5f;
+
+        //Vector3 SpawnTablePos = new Vector3(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
+
         // 위치 y값은 0으로 변경
         randomSpawnPos.y = 0f;
 
@@ -99,15 +113,26 @@ public class GameManager : MonoBehaviourPunCallbacks
 
                 if (i == Impo)
                 {
+                    StartCoroutine("FadeIn");
+
+                    StartCoroutine("ImpostorScene");
+
                     PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
                 }
 
                 else
                 {
+                    StartCoroutine("FadeIn");
+
+                    StartCoroutine("CrewScene");
+
                     PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
                 }
             }
         }
+
+
+     //SpawnPlayer();
 
     }
 
@@ -140,9 +165,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.LeaveRoom();
         }
-
-        // 0907
-
     }
 
     public void LoadScene()
@@ -168,5 +190,82 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     //    PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
     //}
+
+    IEnumerator ImpostorScene()
+    {
+        m_ImpostorScene.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        StartCoroutine("FadeOut");
+
+    }
+
+    IEnumerator CrewScene()
+    {
+        m_CrewScene.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        StartCoroutine("FadeOut");
+    }
+
+    IEnumerator FadeIn()
+    {
+        m_BlackScene.gameObject.SetActive(true);
+
+        m_BlackScene.color = new Color(0, 0, 0, 1);
+
+        float FadeCount = 1;
+
+        while (FadeCount > 0f)
+        {
+            FadeCount -= 0.01f;
+
+            yield return new WaitForSeconds(0.01f);
+
+            m_BlackScene.color = new Color(0, 0, 0, FadeCount);
+        }
+    }
+
+    IEnumerator FadeOut()
+    {
+        m_BlackScene.color = new Color(0, 0, 0, 0);
+
+        float FadeCount = 0;
+
+        while (FadeCount <= 1f)
+        {
+            FadeCount += 0.01f;
+
+            yield return new WaitForSeconds(0.01f);
+
+            m_BlackScene.color = new Color(0, 0, 0, FadeCount);
+        }
+
+        if (FadeCount >= 1f)
+        {
+            m_BlackScene.gameObject.SetActive(false);
+            m_ImpostorScene.gameObject.SetActive(false);
+            m_CrewScene.gameObject.SetActive(false);
+        }
+    }
+
+    //[PunRPC]
+    //// 플레이어 리스폰 위치
+    //// (cos(플레이어 리스트/360) * 반지름 + 원점에서부터 식탁까지 x, sin(플레이어 리스트/360)*반지름 원점에서부터 식탁까지 y)
+    //public void SpawnPlayer()
+    //{
+
+    //    //playerPrefab.transform.position = new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
+    //    transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
+
+    //    m_Spawn = false;
+    //}
+
+    public void Spawn()
+    {
+        m_SpawnButton = true;
+    }
 
 }
