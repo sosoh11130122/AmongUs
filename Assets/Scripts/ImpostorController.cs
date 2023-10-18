@@ -17,7 +17,6 @@ public class ImpostorController : MonoBehaviourPunCallbacks
 
     public float m_MoveSpeed = 4.0f;
 
-    bool m_Spawn = false;
     Collider2D m_Table;
 
     Vector2 m_ImpostorMove = new Vector2();
@@ -52,8 +51,6 @@ public class ImpostorController : MonoBehaviourPunCallbacks
 
         m_ArrowSystem = GameObject.Find("ArrowSystem");
         m_ArrowSystemScript = m_ArrowSystem.GetComponent<Arrow>();
-
-        m_Spawn = GetComponent<GameManager>().m_SpawnButton;
     }
 
     void Update()
@@ -82,13 +79,6 @@ public class ImpostorController : MonoBehaviourPunCallbacks
 
             else
                 m_Sprite.flipX = false;
-        }
-
-        if (m_Spawn)
-        {
-            transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
-
-            m_Spawn = false;
         }
     }
 

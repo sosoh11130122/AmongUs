@@ -455,7 +455,6 @@ MonoBehaviour:
   m_Dead: 0
   m_Nick: {fileID: 7669190413359719886}
   m_MoveSpeed: 4
-  m_Table: {fileID: 0}
 --- !u!114 &7269146895724954245
 MonoBehaviour:
   m_ObjectHideFlags: 0
