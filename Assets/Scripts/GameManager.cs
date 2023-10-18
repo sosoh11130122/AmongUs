@@ -83,8 +83,6 @@ public class GameManager : MonoBehaviourPunCallbacks
             // 자신을 파괴
             Destroy(gameObject);
         }
-
-        m_SpawnButton = GetComponent<bool>();
     }
 
     // 게임 시작과 동시에 플레이어가 될 게임 오브젝트를 생성
@@ -98,7 +96,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         // 위치 y값은 0으로 변경
         randomSpawnPos.y = 0f;
 
-        int Impo = Random.Range(0, PhotonNetwork.PlayerList.Length - 1);
+        int Impo = 3;//Random.Range(0, PhotonNetwork.PlayerList.Length - 1);
 
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
         {
@@ -164,6 +162,11 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PhotonNetwork.LeaveRoom();
+        }
+
+        if (m_SpawnButton)
+        {
+            photonView.RPC("SpawnPlayer", RpcTarget.All);
         }
     }
 
@@ -251,17 +254,18 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
-    //[PunRPC]
-    //// 플레이어 리스폰 위치
-    //// (cos(플레이어 리스트/360) * 반지름 + 원점에서부터 식탁까지 x, sin(플레이어 리스트/360)*반지름 원점에서부터 식탁까지 y)
-    //public void SpawnPlayer()
-    //{
 
-    //    //playerPrefab.transform.position = new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
-    //    transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
+    // 플레이어 리스폰 위치
+    // (cos(플레이어 리스트/360) * 반지름 + 원점에서부터 식탁까지 x, sin(플레이어 리스트/360)*반지름 원점에서부터 식탁까지 y)
+    [PunRPC]
+    public void SpawnPlayer()
+    {
 
-    //    m_Spawn = false;
-    //}
+        //playerPrefab.transform.position = new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
+        ImpostorPrefab.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
+
+        m_SpawnButton = false;
+    }
 
     public void Spawn()
     {

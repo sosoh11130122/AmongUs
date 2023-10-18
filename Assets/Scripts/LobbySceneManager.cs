@@ -76,7 +76,7 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
 
-        m_PlayerPhotonView.RPC("SetPlayerRandomColor", RpcTarget.All);
+      //  m_PlayerPhotonView.RPC("SetPlayerRandomColor", RpcTarget.All);
        
         //playerPrefab.GetComponent<SpriteRenderer>().material.SetColor("_PlayerColor", PlayerColor.GetColor((EPlayerColor)Random.Range(0, 12)));
     }
