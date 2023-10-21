@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 using Photon.Realtime;
+using ExitGames.Client.Photon.StructWrapping;
 
 // 점수와 게임 오버 여부, 게임 UI를 관리하는 게임 매니저
 public class GameManager : MonoBehaviourPunCallbacks
@@ -32,6 +33,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject playerPrefab; // 생성할 플레이어 캐릭터 프리팹
     public GameObject ImpostorPrefab;
 
+    // 1021
+    private GameObject m_Crew;
+    private GameObject m_Impo;
+
     public GameObject m_ImpostorScene;
     public GameObject m_CrewScene;
     public Image m_BlackScene;
@@ -45,7 +50,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
     //0907
-    public PhotonView m_PhotonView; 
+    //public PhotonView m_PhotonView; 
     List<int> m_PlayerList = new List<int>();
 
     private int ImpostorCount = 0;
@@ -74,7 +79,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     //    }
     //}
 
-
     private void Awake()
     {
         // 씬에 싱글톤 오브젝트가 된 다른 GameManager 오브젝트가 있다면
@@ -82,6 +86,11 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             // 자신을 파괴
             Destroy(gameObject);
+        }
+
+        else
+        {
+            DontDestroyOnLoad(this);
         }
     }
 
@@ -111,41 +120,26 @@ public class GameManager : MonoBehaviourPunCallbacks
 
                 if (i == Impo)
                 {
-                    StartCoroutine("FadeIn");
+                    //StartCoroutine("FadeIn");
 
-                    StartCoroutine("ImpostorScene");
+                    //StartCoroutine("ImpostorScene");
 
-                    PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
+                    m_Impo = PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
                 }
 
                 else
                 {
-                    StartCoroutine("FadeIn");
+                    //StartCoroutine("FadeIn");
 
-                    StartCoroutine("CrewScene");
+                    //StartCoroutine("CrewScene");
 
-                    PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
+                    m_Crew = PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
                 }
             }
         }
 
-
-     //SpawnPlayer();
-
     }
 
-    // 점수를 추가하고 UI 갱신
-    //public void AddScore(int newScore)
-    //{
-    //    // 게임 오버가 아닌 상태에서만 점수 증가 가능
-    //    if (!isGameover)
-    //    {
-    //        // 점수 추가
-    //        score += newScore;
-    //        // 점수 UI 텍스트 갱신
-    //        UIManager.instance.UpdateScoreText(score);
-    //    }
-    //}
 
     // 게임 오버 처리
     public void EndGame()
@@ -153,7 +147,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         // 게임 오버 상태를 참으로 변경
         isGameover = true;
         // 게임 오버 UI를 활성화
-        //UIManager.instance.SetActiveGameoverUI(true);
     }
 
     // 키보드 입력을 감지하고 룸을 나가게 함
@@ -166,7 +159,10 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if (m_SpawnButton)
         {
-            photonView.RPC("SpawnPlayer", RpcTarget.All);
+            for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
+            {
+                m_PlayerList[i].Get<PhotonView>().RPC("SpawnPlayer", RpcTarget.All);
+            }
         }
     }
 
@@ -181,18 +177,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         // 룸을 나가면 로비 씬으로 돌아감
         SceneManager.LoadScene("LobbyScene");
     }
-
-    //public void SelectImpostor()
-    //{
-    //    //Destroy(gameObject);
-
-    //    // 생성할 랜덤 위치 지정
-    //    Vector3 randomSpawnPos = Random.insideUnitSphere * 5f;
-    //    // 위치 y값은 0으로 변경
-    //    randomSpawnPos.y = 0f;
-
-    //    PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
-    //}
 
     IEnumerator ImpostorScene()
     {
@@ -260,9 +244,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void SpawnPlayer()
     {
-
-        //playerPrefab.transform.position = new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
-        ImpostorPrefab.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
+        //playerPrefab.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);//new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
+        m_Crew.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
+        
 
         m_SpawnButton = false;
     }

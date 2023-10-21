@@ -35,27 +35,6 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
     private int score = 0; // 현재 게임 점수
     public bool isGameover { get; private set; } // 게임 오버 상태
 
-    // 주기적으로 자동 실행되는, 동기화 메서드
-    //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    //{
-    //     로컬 오브젝트라면 쓰기 부분이 실행됨
-    //    if (stream.IsWriting)
-    //    {
-    //         네트워크를 통해 score 값을 보내기
-    //        stream.SendNext(score);
-    //    }
-    //    else
-    //    {
-    //         리모트 오브젝트라면 읽기 부분이 실행됨         
-
-    //         네트워크를 통해 score 값 받기
-    //        score = (int)stream.ReceiveNext();
-    //         동기화하여 받은 점수를 UI로 표시
-    //        UIManager.instance.UpdateScoreText(score);
-    //    }
-    //}
-
-
     private void Awake()
     {
         // 씬에 싱글톤 오브젝트가 된 다른 GameManager 오브젝트가 있다면
@@ -72,27 +51,15 @@ public class LobbySceneManager : MonoBehaviourPunCallbacks
     private void Start()
     {
         // 생성할 랜덤 위치 지정
-        Vector3 randomSpawnPos = new Vector3(0, 0, 0);
+        //Vector3 randomSpawnPos = new Vector3(0, 0, 0);
 
-        PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
+        //PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
 
       //  m_PlayerPhotonView.RPC("SetPlayerRandomColor", RpcTarget.All);
        
         //playerPrefab.GetComponent<SpriteRenderer>().material.SetColor("_PlayerColor", PlayerColor.GetColor((EPlayerColor)Random.Range(0, 12)));
     }
 
-    // 점수를 추가하고 UI 갱신
-    //public void AddScore(int newScore)
-    //{
-    //    // 게임 오버가 아닌 상태에서만 점수 증가 가능
-    //    if (!isGameover)
-    //    {
-    //        // 점수 추가
-    //        score += newScore;
-    //        // 점수 UI 텍스트 갱신
-    //        UIManager.instance.UpdateScoreText(score);
-    //    }
-    //}
 
     // 게임 오버 처리
     public void EndGame()
