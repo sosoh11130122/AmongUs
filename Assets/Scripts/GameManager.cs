@@ -121,20 +121,12 @@ public class GameManager : MonoBehaviourPunCallbacks
 
                 if (i == Impo)
                 {
-                    //StartCoroutine("FadeIn");
-
-                    //StartCoroutine("ImpostorScene");
-
                     m_Impo = PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
                     PlayerPrefs.SetString("Impostor", "1");
                 }
 
                 else
                 {
-                    //StartCoroutine("FadeIn");
-
-                    //StartCoroutine("CrewScene");
-
                     m_Crew = PhotonNetwork.Instantiate(playerPrefab.name, randomSpawnPos, Quaternion.identity);
                 }
             }
@@ -180,67 +172,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         SceneManager.LoadScene("LobbyScene");
     }
 
-    IEnumerator ImpostorScene()
-    {
-        m_ImpostorScene.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(3f);
-
-        StartCoroutine("FadeOut");
-
-    }
-
-    IEnumerator CrewScene()
-    {
-        m_CrewScene.gameObject.SetActive(true);
-
-        yield return new WaitForSeconds(3f);
-
-        StartCoroutine("FadeOut");
-    }
-
-    IEnumerator FadeIn()
-    {
-        m_BlackScene.gameObject.SetActive(true);
-
-        m_BlackScene.color = new Color(0, 0, 0, 1);
-
-        float FadeCount = 1;
-
-        while (FadeCount > 0f)
-        {
-            FadeCount -= 0.01f;
-
-            yield return new WaitForSeconds(0.01f);
-
-            m_BlackScene.color = new Color(0, 0, 0, FadeCount);
-        }
-    }
-
-    IEnumerator FadeOut()
-    {
-        m_BlackScene.color = new Color(0, 0, 0, 0);
-
-        float FadeCount = 0;
-
-        while (FadeCount <= 1f)
-        {
-            FadeCount += 0.01f;
-
-            yield return new WaitForSeconds(0.01f);
-
-            m_BlackScene.color = new Color(0, 0, 0, FadeCount);
-        }
-
-        if (FadeCount >= 1f)
-        {
-            m_BlackScene.gameObject.SetActive(false);
-            m_ImpostorScene.gameObject.SetActive(false);
-            m_CrewScene.gameObject.SetActive(false);
-        }
-    }
-
-
     // 플레이어 리스폰 위치
     // (cos(플레이어 리스트/360) * 반지름 + 원점에서부터 식탁까지 x, sin(플레이어 리스트/360)*반지름 원점에서부터 식탁까지 y)
     [PunRPC]
@@ -249,7 +180,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         //playerPrefab.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);//new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
         m_Crew.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
         
-
         m_SpawnButton = false;
     }
 
