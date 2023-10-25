@@ -153,10 +153,12 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if (m_SpawnButton)
         {
-            for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
-            {
-                m_PlayerList[i].Get<PhotonView>().RPC("SpawnPlayer", RpcTarget.All);
-            }
+            //for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
+            //{
+            //    m_PlayerList[i].Get<PhotonView>().RPC("SpawnPlayer", RpcTarget.All);
+            //}
+
+            photonView.RPC("SpawnPlayer", RpcTarget.All);
         }
     }
 
@@ -178,7 +180,15 @@ public class GameManager : MonoBehaviourPunCallbacks
     public void SpawnPlayer()
     {
         //playerPrefab.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);//new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
-        m_Crew.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
+        //m_Crew.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
+
+        for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
+        {
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[i])
+            {
+                transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
+            }
+        }
         
         m_SpawnButton = false;
     }
