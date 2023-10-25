@@ -9,7 +9,7 @@ using Photon.Pun.Demo.PunBasics;
 using UnityEngine.SocialPlatforms.Impl;
 
 // 마스터(매치 메이킹) 서버와 룸 접속을 담당
-public class LobbyManager : MonoBehaviourPunCallbacks
+public class NetworkManager : MonoBehaviourPunCallbacks
 {
     private string gameVersion = "1"; // 게임 버전
 
@@ -20,11 +20,43 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public Text m_CitizenCountUI;
 
-    LobbySceneManager m_LobbySceneManager;
-
     [SerializeField]
     private Button m_ImpostorButton;
 
+
+    // 외부에서 싱글톤 오브젝트를 가져올때 사용할 프로퍼티
+    public static NetworkManager instance
+    {
+        get
+        {
+            // 만약 싱글톤 변수에 아직 오브젝트가 할당되지 않았다면
+            if (m_instance == null)
+            {
+                // 씬에서 GameManager 오브젝트를 찾아 할당
+                m_instance = FindObjectOfType<NetworkManager>();
+            }
+
+            // 싱글톤 오브젝트를 반환
+            return m_instance;
+        }
+    }
+
+    private static NetworkManager m_instance; // 싱글톤이 할당될 static 변수
+
+    private void Awake()
+    {
+        // 씬에 싱글톤 오브젝트가 된 다른 GameManager 오브젝트가 있다면
+        if (instance != this)
+        {
+            // 자신을 파괴
+            Destroy(gameObject);
+        }
+
+        else
+        {
+            DontDestroyOnLoad(this);
+        }
+    }
 
     // 게임 실행과 동시에 마스터 서버 접속 시도
     private void Start()
@@ -34,8 +66,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         joinButton.interactable = false;
         connectionInfoText.text = "1.마스터 서버에 접속 중...";
-
-       // m_LobbySceneManager = new LobbySceneManager();
     }
 
     // 마스터 서버 접속 성공시 자동 실행
@@ -45,8 +75,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         joinButton.interactable = true;
 
         connectionInfoText.text = "2.온라인 : 마스터 서버와 연결됨";
-
-      // Debug.Log(PhotonNetwork.Room.Name);
     }
 
     // 마스터 서버 접속 실패시 자동 실행
@@ -69,7 +97,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         {
             connectionInfoText.text = "3.룸에 접속...";
             PhotonNetwork.JoinRandomRoom();
-            //PhotonNetwork.LoadLevel("LobbyScene");
         }
 
         else
@@ -97,28 +124,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.LoadLevel("LobbyScene");
 
-        //PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity, 0); // B
-
-        //PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity, 0); // B
-
-        //StartCoroutine(CreatePlayer());
-
-        //StartCoroutine(this.CreatePlayer());
+        PhotonNetwork.AutomaticallySyncScene = true;
     }
-
-    //    void CreatePlayer()
-    //    {
-    ////        PhotonNetwork.Instantiate("Player", new Vector3(0, 1, 0), Quaternion.identity, 0);
-    //        PhotonNetwork.Instantiate("Player", new Vector3(0, 0, 0), Quaternion.identity).GetComponent<PlayerController>(); // B
-    //    }
-
-    //IEnumerator CreatePlayer()
-    //{
-    //    Debug.Log("메롱");
-
-    //    //PhotonNetwork.Instantiate("Player", new Vector3(0, 1, 0), Quaternion.identity, 0);
-    //    yield return null;
-    //}
 
     private void Update()
     {
