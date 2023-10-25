@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Photon.Realtime;
+using TMPro;
+using Photon.Pun.UtilityScripts;
 
 public class StageSceneManager : MonoBehaviourPunCallbacks
 {
@@ -37,6 +39,9 @@ public class StageSceneManager : MonoBehaviourPunCallbacks
     public GameObject m_CrewScene;
     public Image m_BlackScene;
 
+    public GameObject m_Impo;
+    public GameObject m_Crew;
+
     private int score = 0; // 현재 게임 점수
     public bool isGameover { get; private set; } // 게임 오버 상태
 
@@ -48,6 +53,41 @@ public class StageSceneManager : MonoBehaviourPunCallbacks
             // 자신을 파괴
             Destroy(gameObject);
         }
+
+
+    }
+
+    private void Start()
+    {
+        StartCoroutine("FadeIn");
+
+        if (PlayerPrefs.HasKey("Impostor"))
+        {
+            StartCoroutine("ImpostorScene");
+        }
+
+        else
+        {
+            StartCoroutine("CrewScene");
+        }
+
+        // m_Crew = FindObjectOfType<GameManager>().playerPrefab;
+        //m_CrewPhotonView.StartCoroutine("CrewScene");
+
+        //if (PhotonNetwork.LocalPlayer)
+        //{
+        //    StartCoroutine("CrewScene");
+        //}
+
+        //if (m_Crew.GetPhotonView().IsMine)
+        //{
+        //    StartCoroutine("CrewScene");
+        //}
+
+        //else if (m_Impo.GetPhotonView().IsMine)
+        //{
+        //    StartCoroutine("ImpostorScene");
+        //}
     }
 
     public void EndGame()

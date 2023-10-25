@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     private GameObject m_Crew;
     private GameObject m_Impo;
 
+
     public GameObject m_ImpostorScene;
     public GameObject m_CrewScene;
     public Image m_BlackScene;
@@ -105,7 +106,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         // 위치 y값은 0으로 변경
         randomSpawnPos.y = 0f;
 
-        int Impo = 3;//Random.Range(0, PhotonNetwork.PlayerList.Length - 1);
+        int Impo = 0;//Random.Range(0, PhotonNetwork.PlayerList.Length - 1);
 
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
         {
@@ -125,6 +126,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                     //StartCoroutine("ImpostorScene");
 
                     m_Impo = PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
+                    PlayerPrefs.SetString("Impostor", "1");
                 }
 
                 else

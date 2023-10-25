@@ -526,6 +526,8 @@ MonoBehaviour:
   m_ImpostorScene: {fileID: 109360166}
   m_CrewScene: {fileID: 826312258}
   m_BlackScene: {fileID: 1311327953}
+  m_Impo: {fileID: 8081390140822926542, guid: 7091c89fd1869764a83d2669415cb89d, type: 3}
+  m_Crew: {fileID: 8081390140822926542, guid: 04c20be32976cf24f95f83fd7a425d86, type: 3}
 --- !u!1 &72120026
 GameObject:
   m_ObjectHideFlags: 0
