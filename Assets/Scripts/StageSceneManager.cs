@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using Photon.Realtime;
 using TMPro;
 using Photon.Pun.UtilityScripts;
+using static UnityEngine.Rendering.DebugUI;
 
 public class StageSceneManager : MonoBehaviourPunCallbacks
 {
@@ -39,8 +40,13 @@ public class StageSceneManager : MonoBehaviourPunCallbacks
     public GameObject m_CrewScene;
     public Image m_BlackScene;
 
+    public bool m_SpawnButton = false;
+    public Collider2D m_Table;
+
     public GameObject m_Impo;
     public GameObject m_Crew;
+
+    private int m_ImpoKey;
 
     private int score = 0; // 현재 게임 점수
     public bool isGameover { get; private set; } // 게임 오버 상태
@@ -54,14 +60,14 @@ public class StageSceneManager : MonoBehaviourPunCallbacks
             Destroy(gameObject);
         }
 
-
+        m_ImpoKey = GameManager.FindAnyObjectByType<GameManager>().m_Random;
     }
 
     private void Start()
     {
         StartCoroutine("FadeIn");
 
-        if (PlayerPrefs.HasKey("Impostor"))
+        if (PlayerPrefs.HasKey("Impostor" + m_ImpoKey.ToString()))
         {
             StartCoroutine("ImpostorScene");
         }
@@ -99,15 +105,12 @@ public class StageSceneManager : MonoBehaviourPunCallbacks
 
     // 키보드 입력을 감지하고 룸을 나가게 함
     private void Update()
-    { 
-
-        //if (m_SpawnButton)
-        //{
-        //    for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
-        //    {
-        //        m_PlayerList[i].Get<PhotonView>().RPC("SpawnPlayer", RpcTarget.All);
-        //    }
-        //}
+    {
+        if (m_SpawnButton)
+        {
+            //photonView.RPC("SpawnPlayer", RpcTarget.All);
+            SpawnPlayer();
+        }
     }
 
     IEnumerator ImpostorScene()
@@ -170,21 +173,37 @@ public class StageSceneManager : MonoBehaviourPunCallbacks
         }
     }
 
+    // 플레이어 리스폰 위치
+    // (cos(플레이어 리스트/360) * 반지름 + 원점에서부터 식탁까지 x, sin(플레이어 리스트/360)*반지름 원점에서부터 식탁까지 y)
+    public void SpawnPlayer()
+    {
+        //playerPrefab.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);//new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
+        //m_Crew.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
 
-    //// 플레이어 리스폰 위치
-    //// (cos(플레이어 리스트/360) * 반지름 + 원점에서부터 식탁까지 x, sin(플레이어 리스트/360)*반지름 원점에서부터 식탁까지 y)
-    //[PunRPC]
-    //public void SpawnPlayer()
-    //{
-    //    //playerPrefab.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);//new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
-    //    m_Crew.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
+        for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
+        {
 
+            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[i])
+            {
+                if (PlayerPrefs.HasKey("Impostor1"))
+                {
+                    GameObject Impo = GameObject.FindGameObjectWithTag("Impostor");
+                    Impo.transform.position = new Vector3(Mathf.Cos(30f * i) * 0.001f + m_Table.transform.position.x, Mathf.Sin(30f * i) * 0.001f + m_Table.transform.position.y);
+                }
 
-    //    m_SpawnButton = false;
-    //}
+                else
+                {
+                    GameObject Crew = GameObject.FindGameObjectWithTag("Player");
+                    Crew.transform.position = new Vector2(Mathf.Cos(30f * i) * 0.001f + m_Table.transform.position.x, Mathf.Sin(30f * i) * 0.001f + m_Table.transform.position.y);
+                }
+            }
+        }
 
-    //public void Spawn()
-    //{
-    //    m_SpawnButton = true;
-    //}
+        m_SpawnButton = false;
+    }
+
+    public void Spawn()
+    {
+        m_SpawnButton = true;
+    }
 }

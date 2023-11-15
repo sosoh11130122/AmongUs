@@ -89,7 +89,6 @@ public class ImpostorController : MonoBehaviourPunCallbacks
 
         Move();
 
-        //Nick();
         m_PhotonView.RPC("Nick", RpcTarget.All);
 
     }
@@ -108,7 +107,8 @@ public class ImpostorController : MonoBehaviourPunCallbacks
     [PunRPC]
     void Nick()
     {
-        m_Nick.transform.position = Camera.main.WorldToScreenPoint(new Vector3(this.transform.position.x + 0.8f, this.transform.position.y + 0.02f));
+        m_Nick.transform.position = 
+            Camera.main.WorldToScreenPoint(new Vector3(this.transform.position.x + 0.8f, this.transform.position.y + 0.02f));
     }
 
 

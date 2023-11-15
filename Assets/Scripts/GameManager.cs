@@ -42,12 +42,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject m_CrewScene;
     public Image m_BlackScene;
 
-    public bool m_SpawnButton = false;
-
-    public Collider2D m_Table;
-
     // m_NickNameUI
     //public GameObject m_NickNameUI; //m_NickNameUI
+
+    public int m_Random;
 
 
     //0907
@@ -106,23 +104,19 @@ public class GameManager : MonoBehaviourPunCallbacks
         // 위치 y값은 0으로 변경
         randomSpawnPos.y = 0f;
 
-        int Impo = 0;//Random.Range(0, PhotonNetwork.PlayerList.Length - 1);
+        int Impo = Random.Range(0, PhotonNetwork.PlayerList.Length - 1);
 
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
         {
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[i])
             {
-
-                // m_NickNameUI
-               // PhotonNetwork.LocalPlayer.NickName = PlayerPrefs.GetString("NickName");
-
-                // m_NickNameUI
-                //GameObject M = Instantiate(m_NickNameUI, Vector3.zero, Quaternion.identity);
-
                 if (i == Impo)
                 {
                     m_Impo = PhotonNetwork.Instantiate(ImpostorPrefab.name, randomSpawnPos, Quaternion.identity);
-                    PlayerPrefs.SetString("Impostor", "1");
+
+                    m_Random = Random.Range(0, 1000);
+
+                    PlayerPrefs.SetString("Impostor" + m_Random.ToString(), "1");
                 }
 
                 else
@@ -150,16 +144,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.LeaveRoom();
         }
-
-        if (m_SpawnButton)
-        {
-            //for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
-            //{
-            //    m_PlayerList[i].Get<PhotonView>().RPC("SpawnPlayer", RpcTarget.All);
-            //}
-
-            photonView.RPC("SpawnPlayer", RpcTarget.All);
-        }
     }
 
     public void LoadScene()
@@ -173,29 +157,4 @@ public class GameManager : MonoBehaviourPunCallbacks
         // 룸을 나가면 로비 씬으로 돌아감
         SceneManager.LoadScene("LobbyScene");
     }
-
-    // 플레이어 리스폰 위치
-    // (cos(플레이어 리스트/360) * 반지름 + 원점에서부터 식탁까지 x, sin(플레이어 리스트/360)*반지름 원점에서부터 식탁까지 y)
-    [PunRPC]
-    public void SpawnPlayer()
-    {
-        //playerPrefab.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);//new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
-        //m_Crew.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
-
-        for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
-        {
-            if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[i])
-            {
-                transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
-            }
-        }
-        
-        m_SpawnButton = false;
-    }
-
-    public void Spawn()
-    {
-        m_SpawnButton = true;
-    }
-
 }

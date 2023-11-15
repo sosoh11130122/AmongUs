@@ -108,7 +108,7 @@ public class FixWiringTask : MonoBehaviour
 
                     if (Right != null)
                     {
-                        m_SelectedWire.SetTarget(Hit.transform.position, -80f);
+                        m_SelectedWire.SetTarget(Hit.transform.position, -40f);
                         m_SelectedWire.ConnectWire(Right);
                         Right.ConnectWire(m_SelectedWire);
                         m_SelectedWire = null;
