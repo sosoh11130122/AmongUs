@@ -526,6 +526,8 @@ MonoBehaviour:
   m_ImpostorScene: {fileID: 109360166}
   m_CrewScene: {fileID: 826312258}
   m_BlackScene: {fileID: 1311327953}
+  m_SpawnButton: 0
+  m_Table: {fileID: 2053231484}
   m_Impo: {fileID: 8081390140822926542, guid: 7091c89fd1869764a83d2669415cb89d, type: 3}
   m_Crew: {fileID: 8081390140822926542, guid: 04c20be32976cf24f95f83fd7a425d86, type: 3}
 --- !u!1 &72120026
@@ -3958,9 +3960,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Spawn
+      - m_Target: {fileID: 53871114}
+        m_TargetAssemblyTypeName: StageSceneManager, Assembly-CSharp
+        m_MethodName: SpawnPlayer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
