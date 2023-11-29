@@ -76,24 +76,6 @@ public class StageSceneManager : MonoBehaviourPunCallbacks
         {
             StartCoroutine("CrewScene");
         }
-
-        // m_Crew = FindObjectOfType<GameManager>().playerPrefab;
-        //m_CrewPhotonView.StartCoroutine("CrewScene");
-
-        //if (PhotonNetwork.LocalPlayer)
-        //{
-        //    StartCoroutine("CrewScene");
-        //}
-
-        //if (m_Crew.GetPhotonView().IsMine)
-        //{
-        //    StartCoroutine("CrewScene");
-        //}
-
-        //else if (m_Impo.GetPhotonView().IsMine)
-        //{
-        //    StartCoroutine("ImpostorScene");
-        //}
     }
 
     public void EndGame()
@@ -108,8 +90,8 @@ public class StageSceneManager : MonoBehaviourPunCallbacks
     {
         if (m_SpawnButton)
         {
-            //photonView.RPC("SpawnPlayer", RpcTarget.All);
-            SpawnPlayer();
+            photonView.RPC("SpawnPlayer", RpcTarget.All);
+            //SpawnPlayer();
         }
     }
 
@@ -175,26 +157,45 @@ public class StageSceneManager : MonoBehaviourPunCallbacks
 
     // 플레이어 리스폰 위치
     // (cos(플레이어 리스트/360) * 반지름 + 원점에서부터 식탁까지 x, sin(플레이어 리스트/360)*반지름 원점에서부터 식탁까지 y)
+    [PunRPC]
     public void SpawnPlayer()
     {
         //playerPrefab.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);//new Vector2(Mathf.Cos(30f) * 0.002f + m_Table.transform.position.x, Mathf.Sin(30f) * 0.002f + m_Table.transform.position.y);
         //m_Crew.transform.position = new Vector2(m_Table.transform.position.x, m_Table.transform.position.y);
 
+        //for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
+        //{
+
+        //    if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[i])
+        //    {
+        //        if (PlayerPrefs.HasKey("Impostor1"))
+        //        {
+        //            GameObject Impo = GameObject.FindGameObjectWithTag("Impostor");
+        //            Impo.transform.position = new Vector3(Mathf.Cos(30f * i) * 0.001f + m_Table.transform.position.x, Mathf.Sin(30f * i) * 0.001f + m_Table.transform.position.y);
+        //        }
+
+        //        else
+        //        {
+        //            GameObject Crew = GameObject.FindGameObjectWithTag("Player");
+        //            Crew.transform.position = new Vector2(Mathf.Cos(30f * i) * 0.001f + m_Table.transform.position.x, Mathf.Sin(30f * i) * 0.001f + m_Table.transform.position.y);
+        //        }
+        //    }
+        //}
+
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; ++i)
         {
-
             if (PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[i])
             {
-                if (PlayerPrefs.HasKey("Impostor1"))
+                if (PlayerPrefs.HasKey("Impostor" + m_ImpoKey.ToString()))
                 {
                     GameObject Impo = GameObject.FindGameObjectWithTag("Impostor");
                     Impo.transform.position = new Vector3(Mathf.Cos(30f * i) * 0.001f + m_Table.transform.position.x, Mathf.Sin(30f * i) * 0.001f + m_Table.transform.position.y);
                 }
 
-                else
+                else 
                 {
                     GameObject Crew = GameObject.FindGameObjectWithTag("Player");
-                    Crew.transform.position = new Vector2(Mathf.Cos(30f * i) * 0.001f + m_Table.transform.position.x, Mathf.Sin(30f * i) * 0.001f + m_Table.transform.position.y);
+                    Crew.transform.position = new Vector3(Mathf.Cos(30f * i) * 0.001f + m_Table.transform.position.x, Mathf.Sin(30f * i) * 0.001f + m_Table.transform.position.y);
                 }
             }
         }
