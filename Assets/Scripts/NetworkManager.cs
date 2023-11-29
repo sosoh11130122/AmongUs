@@ -32,7 +32,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             // 만약 싱글톤 변수에 아직 오브젝트가 할당되지 않았다면
             if (m_instance == null)
             {
-                // 씬에서 GameManager 오브젝트를 찾아 할당
+                // 씬에서 NetworkManager 오브젝트를 찾아 할당
                 m_instance = FindObjectOfType<NetworkManager>();
             }
 
@@ -45,7 +45,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        // 씬에 싱글톤 오브젝트가 된 다른 GameManager 오브젝트가 있다면
+        // 씬에 싱글톤 오브젝트가 된 다른 NetworkManager 오브젝트가 있다면
         if (instance != this)
         {
             // 자신을 파괴
@@ -123,8 +123,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         connectionInfoText.text = "4. 방 참가 성공";
 
         PhotonNetwork.LoadLevel("LobbyScene");
-
-        PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     private void Update()
